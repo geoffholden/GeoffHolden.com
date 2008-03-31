@@ -1,0 +1,86 @@
+<!-- $Id$ -->
+<h1>MythTV</h1>
+<p>
+	I recently decided to put together a
+	<a href="http://www.mythtv.org">MythTV</a>
+	<abbr title="Personal Video Recorder">PVR</abbr> for myself.
+	Here's what I got to work with:
+	<ul>
+		<li><a href="http://www.asus.com/products/desktop/pundit-r/overview.htm">ASUS Pundit-R</a></li>
+		<li>Western Digital Caviar SE 200GB (7200RPM ATA100 8MB Cache)</li>
+		<li>Intel Celeron D 320 (2.4GHz)</li>
+		<li>256MB DDR400 RAM</li>
+		<li><a href="http://www.hauppauge.com/Pages/products/data_pvr250.html">Hauppauge WinTV-PVR-250</a></li>
+	</ul>
+</p>
+<blockquote>
+	<em>Note (April 7, 2006):</em> Since I moved to Palo Alto, the MythTV box has
+	undergone a few changes. I no longer have a cable box, so the
+	'slightly ghetto' IR blaster is no longer in use. Also, living
+	on the East coast made me spoiled for timeshifting channels, I
+	don't have that luxury here, so I added a second tuner to the box,
+	an <a href="http://www.avermedia-usa.com/2005home/product/tvtuner/pci/tvgo7/tvgo7.shtml">'AVerTV Go 007 Plus'</a>. It's low-profile let it fit
+	well into the Pundit-R, but it's not a hardware tuner, so anything
+	captured on that has to be done in software.<br />
+	I also added a DVD drive to it, so I can use it as my primary
+	DVD player. (It's actually a DVD-RW, so maybe I'll look into
+	a plugin to record shows to DVD direct from the box)
+</blockquote>
+
+<p>
+	I only ran into one issue assembling the PC. The full size PCI
+	cards don't really fit into the Pundit-R, they're a little too tall.
+	This meant that it had some issues with the PVR-250. It eventually
+	went in, with a little physical persuasion. I just have to remember
+	how tight it is should I ever have to take it back out.
+</p>
+<p class="caption">
+	<img class="caption" src="/content/projects/mythtv/inside.jpg"
+		alt="Inside the tiny case" /><br />
+	Here's a shot inside the Pundit-R (with a temporary CD-ROM drive)
+</p>
+
+<p>
+	As <a href="http://www.gentoo.org/">Gentoo</a> is my current Linux
+	distro of choice, I didn't see any reason to go with anything else
+	on this computer. The installation went without issue, and getting
+	MythTV and everything it needs is a simple <tt>emerge mythtv</tt>
+	on Gentoo.
+</p>
+
+<p>
+	Getting the TV output on the Pundit was a little trickier. I had
+	to use <a href="http://www.ati.com">ATI's</a> binary drivers, and
+	their documentation is seriously lacking. It served as a great
+	reminder of the reasons I prefer
+	<a href="http://www.nvidia.com">NVIDIA</a> cards when I have the
+	option. Once I got the TV output working, the XVideo extension was
+	not enabled on it at all. This is a major problem because then all
+	the video scaling/etc. has to be done in software, putting a much
+	greater load on the processor. Eventually I found the option
+	(undocumented, of course) called <tt>OverlayOnCRTC2</tt> that enables
+	XV on the second display. (For some reason the TV would not be the
+	primary, even though the CRT turns off when the TV is enabled).
+</p>
+
+<p>
+	I also had to put together an IR blaster to control my digital cable
+	box. This went without problem, following the instructions
+	<a href="http://losdos.dyndns.org:8080/public/mythtv-info/MythTV_DISH_IR_LED_TX_via_Modified_LIRC.html">here</a>.
+<p class="caption">
+	<img class="caption" src="/content/projects/mythtv/irblaster.jpg"
+		alt="IR Blaster" /><br />
+	My homebrew IR blaster, with it's very sophisticated mounting mechanism.
+</p>
+
+<p>
+	Everything else went perfectly according to plan. With the addition
+	of MythWeb, I can schedule recordings from my main PC, or when I'm
+	away from home.
+</p>
+<p class="caption">
+	<img class="caption" src="/content/projects/mythtv/case.jpg"
+		alt="Case" /><br />
+	The finished product.
+</p>
+

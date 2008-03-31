@@ -1,0 +1,33 @@
+# BEGIN Custom mod_rewrite rules
+
+# Direct display anything that's a real file
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.*$ - [L]
+
+# Add the trailing slashes
+RewriteRule ^(.+[^/])$ /$1/ [R=permanent,L]
+
+# Redirect old resume URL to resume.geoffholden.com
+RewriteRule ^resume.html http://resume.geoffholden.com/ [R=permanent,L]
+
+# Redirect any gallery stuff to gkhphoto.com
+RewriteRule ^g2/?$ http://gkhphoto.com/gallery/ [R=permanent,L]
+RewriteRule ^g2/.*$ http://gkhphoto.com/gallery/ [R=permanent,L]
+
+# Admin Link Shortcut
+RewriteRule ^admin/? /wordpress/wp-admin/ [R=permanent,L]
+
+# END Custom mod_rewrite rules
+
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /GeoffHolden.com/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /GeoffHolden.com/index.php [L]
+</IfModule>
+
+# END WordPress
