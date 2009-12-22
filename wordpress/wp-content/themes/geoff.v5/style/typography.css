@@ -1,0 +1,113 @@
+body {
+  font-family: 'Lucida Grande', Verdana, Arial, sans-serif;
+  font-size: 87.5%;
+}
+
+pre, code, tt {
+  font-family: 'Andale Mono', 'Courier', 'Courier New', mono;
+}
+
+.item .content .date {
+  font-size: 80%;
+}
+
+a {
+  text-decoration: none;
+}
+
+#footer {
+  font-size: 80%;
+}
+
+#branding h1 {
+  font-size: 250%;
+}
+
+p + p {
+  margin-top: 1em;
+}
+
+ul + ul,
+ul + p {
+  margin-top: 1em;
+}
+
+#main .item .content {
+  text-align: justify;
+}
+#main .item .content ul {
+  list-style: disc;
+  margin-left: 1.5em;
+}
+
+#sidebar .content ul {
+  list-style: disc;
+  margin-left: 1.5em;
+}
+
+#sidebar .content ul.social {
+  list-style: none;
+  margin-left: 0.5em;
+}
+
+p + pre, pre + p {
+  margin-top: 1em;
+}
+
+blockquote {
+  padding: 1em;
+  text-align: justify;
+}
+
+blockquote:before,
+blockquote:after {
+  font-weight: bold;
+  font-size: 300%;
+  font-family: 'Times', 'Times New Roman', serif;
+}
+blockquote:before {
+  content: "\201C";
+  float: left;
+}
+
+blockquote:after {
+  content: "\201D";
+  float: right;
+  margin-top: -0.5em;
+}
+
+blockquote p,
+blockquote div,
+blockquote pre {
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+blockquote + p {
+  clear: both;
+}
+
+.item .content .comments-link {
+  font-size: 80%;
+  margin-top: 0;
+}
+
+#main h2 {
+  text-align: left;
+}
+
+#main h3,
+#main h4,
+#main h5,
+#main h6 {
+  margin-top: 1em;
+  text-align: left;
+}
+
+#main .greader h3.source {
+  margin-bottom: 0;
+}
+#main .greader h4.source {
+  margin-top: 0;
+  margin-bottom: 1em;
+}

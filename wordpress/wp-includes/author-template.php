@@ -2,12 +2,16 @@
 /**
  * Author Template functions for use in themes.
  *
+ * These functions must be used within the WordPress Loop.
+ *
+ * @link http://codex.wordpress.org/Author_Templates
+ *
  * @package WordPress
  * @subpackage Template
  */
 
 /**
- * get_the_author() - Get the author of the current post in the Loop.
+ * Retrieve the author of the current post.
  *
  * @since 1.5
  * @uses $authordata The current author's DB object.
@@ -18,25 +22,26 @@
  */
 function get_the_author($deprecated = '') {
 	global $authordata;
-	return apply_filters('the_author', $authordata->display_name);
+	return apply_filters('the_author', is_object($authordata) ? $authordata->display_name : null);
 }
 
 /**
- * the_author() - Echo the name of the author of the current post in the Loop.
+ * Display the name of the author of the current post.
  *
- * The behavior of this function is based off of old functionality predating get_the_author().
- * This function is not deprecated, but is designed to echo the value from get_the_author()
- * and as an result of any old theme that might still use the old behavior will also
- * pass the value from get_the_author().
+ * The behavior of this function is based off of old functionality predating
+ * get_the_author(). This function is not deprecated, but is designed to echo
+ * the value from get_the_author() and as an result of any old theme that might
+ * still use the old behavior will also pass the value from get_the_author().
  *
- * The normal, expected behavior of this function is to echo the author and not return it.
- * However, backwards compatiability has to be maintained.
+ * The normal, expected behavior of this function is to echo the author and not
+ * return it. However, backwards compatiability has to be maintained.
  *
  * @since 0.71
  * @see get_the_author()
+ * @link http://codex.wordpress.org/Template_Tags/the_author
  *
  * @param string $deprecated Deprecated.
- * @param string $deprecated_echo Echo the string or return it. Deprecated, use get_the_author().
+ * @param string $deprecated_echo Echo the string or return it.
  * @return string The author's display name, from get_the_author().
  */
 function the_author($deprecated = '', $deprecated_echo = true) {
@@ -46,290 +51,95 @@ function the_author($deprecated = '', $deprecated_echo = true) {
 }
 
 /**
- * get_the_author_description() - Get the description of the author of the current post in the Loop.
+ * Retrieve the author who last edited the current post.
  *
- * @since 1.5
- * @uses $authordata The current author's DB object.
- * @return string The author's description.
+ * @since 2.8
+ * @uses $post The current post's DB object.
+ * @uses get_post_meta() Retrieves the ID of the author who last edited the current post.
+ * @uses get_userdata() Retrieves the author's DB object.
+ * @uses apply_filters() Calls 'the_modified_author' hook on the author display name.
+ * @return string The author's display name.
  */
-function get_the_author_description() {
-	global $authordata;
-	return $authordata->description;
+function get_the_modified_author() {
+	global $post;
+	if ( $last_id = get_post_meta($post->ID, '_edit_last', true) ) {
+		$last_user = get_userdata($last_id);
+		return apply_filters('the_modified_author', $last_user->display_name);
+	}
 }
 
 /**
- * the_author_description() - Echo the description of the author of the current post in the Loop.
+ * Display the name of the author who last edited the current post.
  *
- * @since 1.0.0
- * @see get_the_author_description()
+ * @since 2.8
+ * @see get_the_author()
+ * @return string The author's display name, from get_the_modified_author().
  */
-function the_author_description() {
-	echo get_the_author_description();
+function the_modified_author() {
+	echo get_the_modified_author();
 }
 
 /**
- * get_the_author_login() - Get the login name of the author of the current post in the Loop.
- *
- * @since 1.5
- * @uses $authordata The current author's DB object.
- * @return string The author's login name (username).
+ * Retrieve the requested data of the author of the current post.
+ * @link http://codex.wordpress.org/Template_Tags/the_author_meta
+ * @since 2.8.0
+ * @uses $authordata The current author's DB object (if $user_id not specified).
+ * @param string $field selects the field of the users record.
+ * @param int $user_id Optional. User ID.
+ * @return string The author's field from the current author's DB object.
  */
-function get_the_author_login() {
-	global $authordata;
-	return $authordata->user_login;
+function get_the_author_meta($field = '', $user_id = false) {
+	if ( ! $user_id )
+		global $authordata;
+	else
+		$authordata = get_userdata( $user_id );
+
+	$field = strtolower($field);
+	$user_field = "user_$field";
+
+	if ( 'id' == $field )
+		$value = isset($authordata->ID) ? (int)$authordata->ID : 0;
+	elseif ( isset($authordata->$user_field) )
+		$value = $authordata->$user_field;
+	else
+		$value = isset($authordata->$field) ? $authordata->$field : '';
+
+	return apply_filters('get_the_author_' . $field, $value, $user_id);
 }
 
 /**
- * the_author_login() - Echo the login name of the author of the current post in the Loop.
- *
- * @since 0.71
- * @see get_the_author_login()
+ * Retrieve the requested data of the author of the current post.
+ * @link http://codex.wordpress.org/Template_Tags/the_author_meta
+ * @since 2.8.0
+ * @param string $field selects the field of the users record.
+ * @param int $user_id Optional. User ID.
+ * @echo string The author's field from the current author's DB object.
  */
-function the_author_login() {
-	echo get_the_author_login();
+function the_author_meta($field = '', $user_id = false) {
+	echo apply_filters('the_author_' . $field, get_the_author_meta($field, $user_id), $user_id);
 }
 
 /**
- * get_the_author_firstname() - Get the first name of the author of the current post in the Loop.
+ * Display either author's link or author's name.
  *
- * @since 1.5
- * @uses $authordata The current author's DB object.
- * @return string The author's first name.
- */
-function get_the_author_firstname() {
-	global $authordata;
-	return $authordata->first_name;
-}
-
-/**
- * the_author_firstname() - Echo the first name of the author of the current post in the Loop.
+ * If the author has a home page set, echo an HTML link, otherwise just echo the
+ * author's name.
  *
- * @since 0.71
- * @uses get_the_author_firstname()
- */
-function the_author_firstname() {
-	echo get_the_author_firstname();
-}
-
-/**
- * get_the_author_lastname() - Get the last name of the author of the current post in the Loop.
- *
- * @since 1.5
- * @uses $authordata The current author's DB object.
- * @return string The author's last name.
- */
-function get_the_author_lastname() {
-	global $authordata;
-	return $authordata->last_name;
-}
-
-/**
- * the_author_lastname() - Echo the last name of the author of the current post in the Loop.
- *
- * @since 0.71
- * @uses get_the_author_lastname()
- */
-function the_author_lastname() {
-	echo get_the_author_lastname();
-}
-
-/**
- * get_the_author_nickname() - Get the nickname of the author of the current post in the Loop.
- *
- * @since 1.5
- * @uses $authordata The current author's DB object.
- * @return string The author's nickname.
- */
-function get_the_author_nickname() {
-	global $authordata;
-	return $authordata->nickname;
-}
-
-/**
- * the_author_nickname() - Echo the nickname of the author of the current post in the Loop.
- *
- * @since 0.71
- * @uses get_the_author_nickname()
- */
-function the_author_nickname() {
-	echo get_the_author_nickname();
-}
-
-/**
- * get_the_author_ID() - Get the ID of the author of the current post in the Loop.
- *
- * @since 1.5
- * @uses $authordata The current author's DB object.
- * @return int The author's ID.
- */
-function get_the_author_ID() {
-	global $authordata;
-	return (int) $authordata->ID;
-}
-
-/**
- * the_author_ID() - Echo the ID of the author of the current post in the Loop.
- *
- * @since 0.71
- * @uses get_the_author_ID()
- */
-function the_author_ID() {
-	echo get_the_author_id();
-}
-
-/**
- * get_the_author_email() - Get the email of the author of the current post in the Loop.
- *
- * @since 1.5
- * @uses $authordata The current author's DB object.
- * @return string The author's username.
- */
-function get_the_author_email() {
-	global $authordata;
-	return $authordata->user_email;
-}
-
-/**
- * the_author_email() - Echo the email of the author of the current post in the Loop.
- *
- * @since 0.71
- * @uses get_the_author_email()
- */
-function the_author_email() {
-	echo apply_filters('the_author_email', get_the_author_email() );
-}
-
-/**
- * get_the_author_url() - Get the URL to the home page of the author of the current post in the Loop.
- *
- * @since 1.5
- * @uses $authordata The current author's DB object.
- * @return string The URL to the author's page.
- */
-function get_the_author_url() {
-	global $authordata;
-
-	if ( 'http://' == $authordata->user_url )
-		return '';
-
-	return $authordata->user_url;
-}
-
-/**
- * the_author_url() - Echo the URL to the home page of the author of the current post in the Loop.
- *
- * @since 0.71
- * @uses get_the_author_url()
- */
-function the_author_url() {
-	echo get_the_author_url();
-}
-
-/**
- * the_author_link() - If the author has a home page set, echo an HTML link, otherwise just echo the author's name.
- *
+ * @link http://codex.wordpress.org/Template_Tags/the_author_link
  * @since 2.1
- * @uses get_the_author_url()
+ * @uses get_the_author_meta()
  * @uses the_author()
  */
 function the_author_link() {
-	if (get_the_author_url()) {
-		echo '<a href="' . get_the_author_url() . '" title="' . sprintf(__("Visit %s's website"), get_the_author()) . '" rel="external">' . get_the_author() . '</a>';
+	if ( get_the_author_meta('url') ) {
+		echo '<a href="' . get_the_author_meta('url') . '" title="' . esc_attr( sprintf(__("Visit %s&#8217;s website"), get_the_author()) ) . '" rel="external">' . get_the_author() . '</a>';
 	} else {
 		the_author();
 	}
 }
 
 /**
- * get_the_author_icq() - Get the ICQ number of the author of the current post in the Loop.
- *
- * @since 1.5
- * @uses $authordata The current author's DB object.
- * @return string The author's ICQ number.
- */
-function get_the_author_icq() {
-	global $authordata;
-	return $authordata->icq;
-}
-
-/**
- * the_author_icq() - Echo the ICQ number of the author of the current post in the Loop.
- *
- * @since 0.71
- * @see get_the_author_icq()
- */
-function the_author_icq() {
-	echo get_the_author_icq();
-}
-
-/**
- * get_the_author_aim() - Get the AIM name of the author of the current post in the Loop.
- *
- * @since 1.5
- * @uses $authordata The current author's DB object.
- * @return string The author's AIM name.
- */
-function get_the_author_aim() {
-	global $authordata;
-	return str_replace(' ', '+', $authordata->aim);
-}
-
-/**
- * the_author_aim() - Echo the AIM name of the author of the current post in the Loop.
- *
- * @since 0.71
- * @see get_the_author_aim()
- */
-function the_author_aim() {
-	echo get_the_author_aim();
-}
-
-/**
- * get_the_author_yim() - Get the Yahoo! IM name of the author of the current post in the Loop.
- *
- * @since 1.5
- * @uses $authordata The current author's DB object.
- * @return string The author's Yahoo! IM name.
- */
-function get_the_author_yim() {
-	global $authordata;
-	return $authordata->yim;
-}
-
-/**
- * the_author_yim() - Echo the Yahoo! IM name of the author of the current post in the Loop.
- *
- * @since 0.71
- * @see get_the_author_yim()
- */
-function the_author_yim() {
-	echo get_the_author_yim();
-}
-
-/**
- * get_the_author_msn() - Get the MSN address of the author of the current post in the Loop.
- *
- * @since 1.5
- * @uses $authordata The current author's DB object.
- * @return string The author's MSN address.
- */
-function get_the_author_msn() {
-	global $authordata;
-	return $authordata->msn;
-}
-
-/**
- * the_author_msn() - Echo the MSN address of the author of the current post in the Loop.
- *
- * @since 0.71
- * @see get_the_author_msn()
- */
-function the_author_msn() {
-	echo get_the_author_msn();
-}
-
-/**
- * get_the_author_posts() - Get the number of posts by the author of the current post in the Loop.
+ * Retrieve the number of posts by the author of the current post.
  *
  * @since 1.5
  * @uses $post The current post in the Loop's DB object.
@@ -342,8 +152,9 @@ function get_the_author_posts() {
 }
 
 /**
- * the_author_posts() - Echo the number of posts by the author of the current post in the Loop.
+ * Display the number of posts by the author of the current post.
  *
+ * @link http://codex.wordpress.org/Template_Tags/the_author_posts
  * @since 0.71
  * @uses get_the_author_posts() Echos returned value from function.
  */
@@ -352,12 +163,14 @@ function the_author_posts() {
 }
 
 /**
- * the_author_posts_link() - Echo an HTML link to the author page of the author of the current post in the Loop.
+ * Display an HTML link to the author page of the author of the current post.
  *
- * Does just echo get_author_posts_url() function, like the others do. The reason for this,
- * is that another function is used to help in printing the link to the author's posts.
+ * Does just echo get_author_posts_url() function, like the others do. The
+ * reason for this, is that another function is used to help in printing the
+ * link to the author's posts.
  *
- * @since 1.2
+ * @link http://codex.wordpress.org/Template_Tags/the_author_posts_link
+ * @since 1.2.0
  * @uses $authordata The current author's DB object.
  * @uses get_author_posts_url()
  * @uses get_the_author()
@@ -365,18 +178,19 @@ function the_author_posts() {
  */
 function the_author_posts_link($deprecated = '') {
 	global $authordata;
-	printf(
+	$link = sprintf(
 		'<a href="%1$s" title="%2$s">%3$s</a>',
 		get_author_posts_url( $authordata->ID, $authordata->user_nicename ),
-		sprintf( __( 'Posts by %s' ), attribute_escape( get_the_author() ) ),
+		esc_attr( sprintf( __( 'Posts by %s' ), get_the_author() ) ),
 		get_the_author()
 	);
+	echo apply_filters( 'the_author_posts_link', $link );
 }
 
 /**
- * get_author_posts_url() - Get the URL to the author page of the author of the current post in the Loop.
+ * Retrieve the URL to the author page of the author of the current post.
  *
- * @since 2.1
+ * @since 2.1.0
  * @uses $wp_rewrite WP_Rewrite
  * @return string The URL to the author's page.
  */
@@ -404,29 +218,28 @@ function get_author_posts_url($author_id, $author_nicename = '') {
 }
 
 /**
- * get_author_name() - Get the specified author's preferred display name.
+ * List all the authors of the blog, with several options available.
  *
- * @since 1.0.0
- * @param int $auth_id The ID of the author.
- * @return string The author's display name.
- */
-function get_author_name( $auth_id ) {
-	$authordata = get_userdata( $auth_id );
-	return $authordata->display_name;
-}
-
-/**
- * wp_list_authors() - List all the authors of the blog, with several options available.
+ * <ul>
+ * <li>optioncount (boolean) (false): Show the count in parenthesis next to the
+ * author's name.</li>
+ * <li>exclude_admin (boolean) (true): Exclude the 'admin' user that is
+ * installed bydefault.</li>
+ * <li>show_fullname (boolean) (false): Show their full names.</li>
+ * <li>hide_empty (boolean) (true): Don't show authors without any posts.</li>
+ * <li>feed (string) (''): If isn't empty, show links to author's feeds.</li>
+ * <li>feed_image (string) (''): If isn't empty, use this image to link to
+ * feeds.</li>
+ * <li>echo (boolean) (true): Set to false to return the output, instead of
+ * echoing.</li>
+ * <li>style (string) ('list'): Whether to display list of authors in list form
+ * or as a string.</li>
+ * <li>html (bool) (true): Whether to list the items in html for or plaintext.
+ * </li>
+ * </ul>
  *
- * optioncount (boolean) (false): Show the count in parenthesis next to the author's name.
- * exclude_admin (boolean) (true): Exclude the 'admin' user that is installed by default.
- * show_fullname (boolean) (false): Show their full names.
- * hide_empty (boolean) (true): Don't show authors without any posts.
- * feed (string) (''): If isn't empty, show links to author's feeds.
- * feed_image (string) (''): If isn't empty, use this image to link to feeds.
- * echo (boolean) (true): Set to false to return the output, instead of echoing.
- *
- * @since 1.2
+ * @link http://codex.wordpress.org/Template_Tags/wp_list_authors
+ * @since 1.2.0
  * @param array $args The argument array.
  * @return null|string The output, if echo is set to false.
  */
@@ -436,12 +249,12 @@ function wp_list_authors($args = '') {
 	$defaults = array(
 		'optioncount' => false, 'exclude_admin' => true,
 		'show_fullname' => false, 'hide_empty' => true,
-		'feed' => '', 'feed_image' => '', 'feed_type' => '', 'echo' => true
+		'feed' => '', 'feed_image' => '', 'feed_type' => '', 'echo' => true,
+		'style' => 'list', 'html' => true
 	);
 
 	$r = wp_parse_args( $args, $defaults );
 	extract($r, EXTR_SKIP);
-
 	$return = '';
 
 	/** @todo Move select to get_authors(). */
@@ -453,6 +266,9 @@ function wp_list_authors($args = '') {
 	}
 
 	foreach ( (array) $authors as $author ) {
+
+		$link = '';
+
 		$author = get_userdata( $author->ID );
 		$posts = (isset($author_count[$author->ID])) ? $author_count[$author->ID] : 0;
 		$name = $author->display_name;
@@ -460,23 +276,34 @@ function wp_list_authors($args = '') {
 		if ( $show_fullname && ($author->first_name != '' && $author->last_name != '') )
 			$name = "$author->first_name $author->last_name";
 
-		if ( !($posts == 0 && $hide_empty) )
+		if( !$html ) {
+			if ( $posts == 0 ) {
+				if ( ! $hide_empty )
+					$return .= $name . ', ';
+			} else
+				$return .= $name . ', ';
+
+			// No need to go further to process HTML.
+			continue;
+		}
+
+		if ( !($posts == 0 && $hide_empty) && 'list' == $style )
 			$return .= '<li>';
 		if ( $posts == 0 ) {
-			if ( !$hide_empty )
+			if ( ! $hide_empty )
 				$link = $name;
 		} else {
-			$link = '<a href="' . get_author_posts_url($author->ID, $author->user_nicename) . '" title="' . sprintf(__("Posts by %s"), attribute_escape($author->display_name)) . '">' . $name . '</a>';
+			$link = '<a href="' . get_author_posts_url($author->ID, $author->user_nicename) . '" title="' . esc_attr( sprintf(__("Posts by %s"), $author->display_name) ) . '">' . $name . '</a>';
 
 			if ( (! empty($feed_image)) || (! empty($feed)) ) {
 				$link .= ' ';
 				if (empty($feed_image))
 					$link .= '(';
-				$link .= '<a href="' . get_author_rss_link(0, $author->ID, $author->user_nicename) . '"';
+				$link .= '<a href="' . get_author_feed_link($author->ID) . '"';
 
 				if ( !empty($feed) ) {
-					$title = ' title="' . $feed . '"';
-					$alt = ' alt="' . $feed . '"';
+					$title = ' title="' . esc_attr($feed) . '"';
+					$alt = ' alt="' . esc_attr($feed) . '"';
 					$name = $feed;
 					$link .= $title;
 				}
@@ -484,7 +311,7 @@ function wp_list_authors($args = '') {
 				$link .= '>';
 
 				if ( !empty($feed_image) )
-					$link .= "<img src=\"$feed_image\" style=\"border: none;\"$alt$title" . ' />';
+					$link .= "<img src=\"" . esc_url($feed_image) . "\" style=\"border: none;\"$alt$title" . ' />';
 				else
 					$link .= $name;
 
@@ -499,10 +326,15 @@ function wp_list_authors($args = '') {
 
 		}
 
-		if ( !($posts == 0 && $hide_empty) )
+		if ( !($posts == 0 && $hide_empty) && 'list' == $style )
 			$return .= $link . '</li>';
+		else if ( ! $hide_empty )
+			$return .= $link . ', ';
 	}
-	if ( !$echo )
+
+	$return = trim($return, ', ');
+
+	if ( ! $echo )
 		return $return;
 	echo $return;
 }

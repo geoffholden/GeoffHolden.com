@@ -1,27 +1,107 @@
 <?php
+/**
+ * The custom header image script.
+ *
+ * @package WordPress
+ * @subpackage Administration
+ */
 
+/**
+ * The custom header image class.
+ *
+ * @since unknown
+ * @package WordPress
+ * @subpackage Administration
+ */
 class Custom_Image_Header {
+
+	/**
+	 * Callback for administration header.
+	 *
+	 * @var callback
+	 * @since unknown
+	 * @access private
+	 */
 	var $admin_header_callback;
 
+	/**
+	 * PHP4 Constructor - Register administration header callback.
+	 *
+	 * @since unknown
+	 * @param callback $admin_header_callback
+	 * @return Custom_Image_Header
+	 */
 	function Custom_Image_Header($admin_header_callback) {
 		$this->admin_header_callback = $admin_header_callback;
 	}
 
+	/**
+	 * Setup the hooks for the Custom Header admin page.
+	 *
+	 * @since unknown
+	 */
 	function init() {
-		$page = add_theme_page(__('Custom Image Header'), __('Custom Image Header'), 'edit_themes', 'custom-header', array(&$this, 'admin_page'));
+		$page = add_theme_page(__('Custom Header'), __('Custom Header'), 'edit_themes', 'custom-header', array(&$this, 'admin_page'));
 
 		add_action("admin_print_scripts-$page", array(&$this, 'js_includes'));
+		add_action("admin_print_styles-$page", array(&$this, 'css_includes'));
+		add_action("admin_head-$page", array(&$this, 'take_action'), 50);
 		add_action("admin_head-$page", array(&$this, 'js'), 50);
 		add_action("admin_head-$page", $this->admin_header_callback, 51);
 	}
 
-	function js_includes() {
-		wp_enqueue_script('cropper');
-		wp_enqueue_script('colorpicker');
+	/**
+	 * Get the current step.
+	 *
+	 * @since unknown
+	 *
+	 * @return int Current step
+	 */
+	function step() {
+		if ( ! isset( $_GET['step'] ) )
+			return 1;
+
+		$step = (int) $_GET['step'];
+		if ( $step < 1 || 3 < $step )
+			$step = 1;
+
+		return $step;
 	}
 
-	function js() {
+	/**
+	 * Setup the enqueue for the JavaScript files.
+	 *
+	 * @since unknown
+	 */
+	function js_includes() {
+		$step = $this->step();
 
+		if ( 1 == $step )
+			wp_enqueue_script('farbtastic');
+		elseif ( 2 == $step )
+			wp_enqueue_script('jcrop');
+	}
+
+	/**
+	 * Setup the enqueue for the CSS files
+	 *
+	 * @since 2.7
+	 */
+	function css_includes() {
+		$step = $this->step();
+
+		if ( 1 == $step )
+			wp_enqueue_style('farbtastic');
+		elseif ( 2 == $step )
+			wp_enqueue_style('jcrop');
+	}
+
+	/**
+	 * Execute custom header modification.
+	 *
+	 * @since unknown
+	 */
+	function take_action() {
 		if ( isset( $_POST['textcolor'] ) ) {
 			check_admin_referer('custom-header');
 			if ( 'blank' == $_POST['textcolor'] ) {
@@ -36,119 +116,156 @@ class Custom_Image_Header {
 			check_admin_referer('custom-header');
 			remove_theme_mods();
 		}
-	?>
-<script type="text/javascript">
-
-	function onEndCrop( coords, dimensions ) {
-		$( 'x1' ).value = coords.x1;
-		$( 'y1' ).value = coords.y1;
-		$( 'x2' ).value = coords.x2;
-		$( 'y2' ).value = coords.y2;
-		$( 'width' ).value = dimensions.width;
-		$( 'height' ).value = dimensions.height;
 	}
 
-	// with a supplied ratio
-	Event.observe(
-		window,
-		'load',
-		function() {
-			var xinit = <?php echo HEADER_IMAGE_WIDTH; ?>;
-			var yinit = <?php echo HEADER_IMAGE_HEIGHT; ?>;
-			var ratio = xinit / yinit;
-			var ximg = $('upload').width;
-			var yimg = $('upload').height;
-			if ( yimg < yinit || ximg < xinit ) {
-				if ( ximg / yimg > ratio ) {
-					yinit = yimg;
-					xinit = yinit * ratio;
-				} else {
-					xinit = ximg;
-					yinit = xinit / ratio;
-				}
-			}
-			new Cropper.Img(
-				'upload',
-				{
-					ratioDim: { x: xinit, y: yinit },
-					displayOnInit: true,
-					onEndCrop: onEndCrop
-				}
-			)
-		}
-	);
+	/**
+	 * Execute Javascript depending on step.
+	 *
+	 * @since unknown
+	 */
+	function js() {
+		$step = $this->step();
+		if ( 1 == $step )
+			$this->js_1();
+		elseif ( 2 == $step )
+			$this->js_2();
+	}
 
-	var cp = new ColorPicker();
+	/**
+	 * Display Javascript based on Step 1.
+	 *
+	 * @since unknown
+	 */
+	function js_1() { ?>
+<script type="text/javascript">
+	var buttons = ['#name', '#desc', '#pickcolor', '#defaultcolor'];
+	var farbtastic;
 
 	function pickColor(color) {
-		$('name').style.color = color;
-		$('desc').style.color = color;
-		$('textcolor').value = color;
+		jQuery('#name').css('color', color);
+		jQuery('#desc').css('color', color);
+		jQuery('#textcolor').val(color);
+		farbtastic.setColor(color);
 	}
-	function PopupWindow_hidePopup(magicword) {
-		if ( magicword != 'prettyplease' )
-			return false;
-		if (this.divName != null) {
-			if (this.use_gebi) {
-				document.getElementById(this.divName).style.visibility = "hidden";
+
+	jQuery(document).ready(function() {
+		jQuery('#pickcolor').click(function() {
+			jQuery('#colorPickerDiv').show();
+		});
+
+		jQuery('#hidetext').click(function() {
+			toggle_text();
+		});
+
+		farbtastic = jQuery.farbtastic('#colorPickerDiv', function(color) { pickColor(color); });
+		pickColor('#<?php echo get_theme_mod('header_textcolor', HEADER_TEXTCOLOR); ?>');
+
+		<?php if ( 'blank' == get_theme_mod('header_textcolor', HEADER_TEXTCOLOR) ) { ?>
+		toggle_text();
+		<?php } ?>
+	});
+
+	jQuery(document).mousedown(function(){
+		// Make the picker disappear, since we're using it in an independant div
+		hide_picker();
+	});
+
+	function colorDefault() {
+		pickColor('#<?php echo HEADER_TEXTCOLOR; ?>');
+	}
+
+	function hide_picker(what) {
+		var update = false;
+		jQuery('#colorPickerDiv').each(function(){
+			var id = jQuery(this).attr('id');
+			if (id == what) {
+				return;
 			}
-			else if (this.use_css) {
-				document.all[this.divName].style.visibility = "hidden";
+			var display = jQuery(this).css('display');
+			if (display == 'block') {
+				jQuery(this).fadeOut(2);
 			}
-			else if (this.use_layers) {
-				document.layers[this.divName].visibility = "hidden";
-			}
+		});
+	}
+
+	function toggle_text(force) {
+		if(jQuery('#textcolor').val() == 'blank') {
+			//Show text
+			jQuery( buttons.toString() ).show();
+			jQuery('#textcolor').val('<?php echo HEADER_TEXTCOLOR; ?>');
+			jQuery('#hidetext').val('<?php _e('Hide Text'); ?>');
 		}
 		else {
-			if (this.popupWindow && !this.popupWindow.closed) {
-				this.popupWindow.close();
-				this.popupWindow = null;
-			}
-		}
-		return false;
-	}
-	function colorSelect(t,p) {
-		if ( cp.p == p && document.getElementById(cp.divName).style.visibility != "hidden" ) {
-			cp.hidePopup('prettyplease');
-		} else {
-			cp.p = p;
-			cp.select(t,p);
+			//Hide text
+			jQuery( buttons.toString() ).hide();
+			jQuery('#textcolor').val('blank');
+			jQuery('#hidetext').val('<?php _e('Show Text'); ?>');
 		}
 	}
-	function colorDefault() {
-		pickColor('<?php echo HEADER_TEXTCOLOR; ?>');
-	}
 
-	function hide_text() {
-		$('name').style.display = 'none';
-		$('desc').style.display = 'none';
-		$('pickcolor').style.display = 'none';
-		$('defaultcolor').style.display = 'none';
-		$('textcolor').value = 'blank';
-		$('hidetext').value = '<?php _e('Show Text'); ?>';
-//		$('hidetext').onclick = 'show_text()';
-		Event.observe( $('hidetext'), 'click', show_text );
-	}
 
-	function show_text() {
-		$('name').style.display = 'block';
-		$('desc').style.display = 'block';
-		$('pickcolor').style.display = 'inline';
-		$('defaultcolor').style.display = 'inline';
-		$('textcolor').value = '<?php echo HEADER_TEXTCOLOR; ?>';
-		$('hidetext').value = '<?php _e('Hide Text'); ?>';
-		Event.stopObserving( $('hidetext'), 'click', show_text );
-		Event.observe( $('hidetext'), 'click', hide_text );
-	}
-
-	<?php if ( 'blank' == get_theme_mod('header_textcolor', HEADER_TEXTCOLOR) ) { ?>
-Event.observe( window, 'load', hide_text );
-	<?php } ?>
 
 </script>
 <?php
 	}
 
+	/**
+	 * Display Javascript based on Step 2.
+	 *
+	 * @since unknown
+	 */
+	function js_2() { ?>
+<script type="text/javascript">
+	function onEndCrop( coords ) {
+		jQuery( '#x1' ).val(coords.x);
+		jQuery( '#y1' ).val(coords.y);
+		jQuery( '#x2' ).val(coords.x2);
+		jQuery( '#y2' ).val(coords.y2);
+		jQuery( '#width' ).val(coords.w);
+		jQuery( '#height' ).val(coords.h);
+	}
+
+	// with a supplied ratio
+	jQuery(document).ready(function() {
+		var xinit = <?php echo HEADER_IMAGE_WIDTH; ?>;
+		var yinit = <?php echo HEADER_IMAGE_HEIGHT; ?>;
+		var ratio = xinit / yinit;
+		var ximg = jQuery('#upload').width();
+		var yimg = jQuery('#upload').height();
+
+		//set up default values
+		jQuery( '#x1' ).val(0);
+		jQuery( '#y1' ).val(0);
+		jQuery( '#x2' ).val(xinit);
+		jQuery( '#y2' ).val(yinit);
+		jQuery( '#width' ).val(xinit);
+		jQuery( '#height' ).val(yinit);
+
+		if ( yimg < yinit || ximg < xinit ) {
+			if ( ximg / yimg > ratio ) {
+				yinit = yimg;
+				xinit = yinit * ratio;
+			} else {
+				xinit = ximg;
+				yinit = xinit / ratio;
+			}
+		}
+
+		jQuery('#upload').Jcrop({
+			aspectRatio: ratio,
+			setSelect: [ 0, 0, xinit, yinit ],
+			onSelect: onEndCrop
+		});
+	});
+</script>
+<?php
+	}
+
+	/**
+	 * Display first step of custom header image page.
+	 *
+	 * @since unknown
+	 */
 	function step_1() {
 		if ( $_GET['updated'] ) { ?>
 <div id="message" class="updated fade">
@@ -157,33 +274,34 @@ Event.observe( window, 'load', hide_text );
 		<?php } ?>
 
 <div class="wrap">
+<?php screen_icon(); ?>
 <h2><?php _e('Your Header Image'); ?></h2>
 <p><?php _e('This is your header image. You can change the text color or upload and crop a new image.'); ?></p>
 
-<div id="headimg" style="background-image: url(<?php clean_url(header_image()) ?>);">
+<div id="headimg" style="background-image: url(<?php esc_url(header_image()) ?>);">
 <h1><a onclick="return false;" href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>" id="name"><?php bloginfo('name'); ?></a></h1>
 <div id="desc"><?php bloginfo('description');?></div>
 </div>
 <?php if ( !defined( 'NO_HEADER_TEXT' ) ) { ?>
-<form method="post" action="<?php echo get_option('siteurl') ?>/wp-admin/themes.php?page=custom-header&amp;updated=true">
-<input type="button" value="<?php _e('Hide Text'); ?>" onclick="hide_text()" id="hidetext" />
-<input type="button" value="<?php _e('Select a Text Color'); ?>" onclick="colorSelect($('textcolor'), 'pickcolor')" id="pickcolor" /><input type="button" value="<?php _e('Use Original Color'); ?>" onclick="colorDefault()" id="defaultcolor" />
+<form method="post" action="<?php echo admin_url('themes.php?page=custom-header&amp;updated=true') ?>">
+<input type="button" class="button" value="<?php esc_attr_e('Hide Text'); ?>" onclick="hide_text()" id="hidetext" />
+<input type="button" class="button" value="<?php esc_attr_e('Select a Text Color'); ?>" id="pickcolor" /><input type="button" class="button" value="<?php esc_attr_e('Use Original Color'); ?>" onclick="colorDefault()" id="defaultcolor" />
 <?php wp_nonce_field('custom-header') ?>
-<input type="hidden" name="textcolor" id="textcolor" value="#<?php attribute_escape(header_textcolor()) ?>" /><input name="submit" type="submit" value="<?php _e('Save Changes'); ?>" /></form>
+<input type="hidden" name="textcolor" id="textcolor" value="#<?php esc_attr(header_textcolor()) ?>" /><input name="submit" type="submit" class="button" value="<?php esc_attr_e('Save Changes'); ?>" /></form>
 <?php } ?>
 
-<div id="colorPickerDiv" style="z-index: 100;background:#eee;border:1px solid #ccc;position:absolute;visibility:hidden;"> </div>
+<div id="colorPickerDiv" style="z-index: 100;background:#eee;border:1px solid #ccc;position:absolute;display:none;"> </div>
 </div>
 <div class="wrap">
 <h2><?php _e('Upload New Header Image'); ?></h2><p><?php _e('Here you can upload a custom header image to be shown at the top of your blog instead of the default one. On the next screen you will be able to crop the image.'); ?></p>
 <p><?php printf(__('Images of exactly <strong>%1$d x %2$d pixels</strong> will be used as-is.'), HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT); ?></p>
 
-<form enctype="multipart/form-data" id="uploadForm" method="POST" action="<?php echo attribute_escape(add_query_arg('step', 2)) ?>" style="margin: auto; width: 50%;">
+<form enctype="multipart/form-data" id="uploadForm" method="POST" action="<?php echo esc_attr(add_query_arg('step', 2)) ?>" style="margin: auto; width: 50%;">
 <label for="upload"><?php _e('Choose an image from your computer:'); ?></label><br /><input type="file" id="upload" name="import" />
 <input type="hidden" name="action" value="save" />
 <?php wp_nonce_field('custom-header') ?>
 <p class="submit">
-<input type="submit" value="<?php _e('Upload'); ?>" />
+<input type="submit" value="<?php esc_attr_e('Upload'); ?>" />
 </p>
 </form>
 
@@ -193,15 +311,20 @@ Event.observe( window, 'load', hide_text );
 <div class="wrap">
 <h2><?php _e('Reset Header Image and Color'); ?></h2>
 <p><?php _e('This will restore the original header image and color. You will not be able to retrieve any customizations.') ?></p>
-<form method="post" action="<?php echo attribute_escape(add_query_arg('step', 1)) ?>">
+<form method="post" action="<?php echo esc_attr(add_query_arg('step', 1)) ?>">
 <?php wp_nonce_field('custom-header'); ?>
-<input type="submit" name="resetheader" value="<?php _e('Restore Original Header'); ?>" />
+<input type="submit" class="button" name="resetheader" value="<?php esc_attr_e('Restore Original Header'); ?>" />
 </form>
 </div>
 		<?php endif;
 
 	}
 
+	/**
+	 * Display second step of custom header image page.
+	 *
+	 * @since unknown
+	 */
 	function step_2() {
 		check_admin_referer('custom-header');
 		$overrides = array('test_form' => false);
@@ -231,7 +354,7 @@ Event.observe( window, 'load', hide_text );
 			// Add the meta-data
 			wp_update_attachment_metadata( $id, wp_generate_attachment_metadata( $id, $file ) );
 
-			set_theme_mod('header_image', clean_url($url));
+			set_theme_mod('header_image', esc_url($url));
 			do_action('wp_create_file_in_uploads', $file, $id); // For replication
 			return $this->finished();
 		} elseif ( $width > HEADER_IMAGE_WIDTH ) {
@@ -249,10 +372,10 @@ Event.observe( window, 'load', hide_text );
 
 <div class="wrap">
 
-<form method="POST" action="<?php echo attribute_escape(add_query_arg('step', 3)) ?>">
+<form method="POST" action="<?php echo esc_attr(add_query_arg('step', 3)) ?>">
 
 <p><?php _e('Choose the part of the image you want to use as your header.'); ?></p>
-<div id="testWrap">
+<div id="testWrap" style="position: relative">
 <img src="<?php echo $url; ?>" id="upload" width="<?php echo $width; ?>" height="<?php echo $height; ?>" />
 </div>
 
@@ -263,10 +386,10 @@ Event.observe( window, 'load', hide_text );
 <input type="hidden" name="y2" id="y2" />
 <input type="hidden" name="width" id="width" />
 <input type="hidden" name="height" id="height" />
-<input type="hidden" name="attachment_id" id="attachment_id" value="<?php echo $id; ?>" />
-<input type="hidden" name="oitar" id="oitar" value="<?php echo $oitar; ?>" />
+<input type="hidden" name="attachment_id" id="attachment_id" value="<?php echo esc_attr($id); ?>" />
+<input type="hidden" name="oitar" id="oitar" value="<?php echo esc_attr($oitar); ?>" />
 <?php wp_nonce_field('custom-header') ?>
-<input type="submit" value="<?php _e('Crop Header'); ?>" />
+<input type="submit" value="<?php esc_attr_e('Crop Header'); ?>" />
 </p>
 
 </form>
@@ -274,6 +397,11 @@ Event.observe( window, 'load', hide_text );
 		<?php
 	}
 
+	/**
+	 * Display third step of custom header image page.
+	 *
+	 * @since unknown
+	 */
 	function step_3() {
 		check_admin_referer('custom-header');
 		if ( $_POST['oitar'] > 1 ) {
@@ -315,6 +443,11 @@ Event.observe( window, 'load', hide_text );
 		return $this->finished();
 	}
 
+	/**
+	 * Display last step of custom header image page.
+	 *
+	 * @since unknown
+	 */
 	function finished() {
 		?>
 <div class="wrap">
@@ -326,20 +459,19 @@ Event.observe( window, 'load', hide_text );
 		<?php
 	}
 
+	/**
+	 * Display the page based on the current step.
+	 *
+	 * @since unknown
+	 */
 	function admin_page() {
-		if ( !isset( $_GET['step'] ) )
-			$step = 1;
-		else
-			$step = (int) $_GET['step'];
-
-		if ( 1 == $step ) {
+		$step = $this->step();
+		if ( 1 == $step )
 			$this->step_1();
-		} elseif ( 2 == $step ) {
+		elseif ( 2 == $step )
 			$this->step_2();
-		} elseif ( 3 == $step ) {
+		elseif ( 3 == $step )
 			$this->step_3();
-		}
-
 	}
 
 }

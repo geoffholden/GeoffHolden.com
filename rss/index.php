@@ -9,15 +9,37 @@ echo '<?xml version="1.0" encoding="UTF-8"?>'; ?>
 <language>en-us</language> 
 
 <?php
+$feedurls = array();
+switch ($_GET['i']) {
+	case 'all':
+		$feedurls = array(
+			'http://www.geoffholden.com/feed/',
+			'http://gkhphoto.com/feed/',
+			'http://www.google.com/reader/public/atom/user%2F01568910581268426924%2Fstate%2Fcom.google%2Fbroadcast',
+			'http://twitter.com/statuses/user_timeline/14185623.rss'
+		);
+		break;
+	case 'abt':
+		$feedurls = array(
+			'http://www.geoffholden.com/feed/',
+			'http://gkhphoto.com/feed/',
+			'http://www.google.com/reader/public/atom/user%2F01568910581268426924%2Fstate%2Fcom.google%2Fbroadcast',
+		);
+		break;
+	case 'blogs':
+	default:
+		$feedurls = array(
+			'http://www.geoffholden.com/feed/',
+			'http://gkhphoto.com/feed/',
+		);
+} 
+
 require_once('simplepie.inc');
 
 $feed = new SimplePie();
 
 
-$feed->set_feed_url(array(
-	'http://www.geoffholden.com/feed/',
-	'http://gkhphoto.com/feed/'
-));
+$feed->set_feed_url($feedurls);
 
 $feed->set_cache_duration (600);
 $success = $feed->init();

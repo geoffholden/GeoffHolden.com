@@ -1,0 +1,281 @@
+html, body {
+  height: 100%;
+  margin-top: 0;
+}
+
+.item {
+  width: 550px;
+  margin-bottom: 16px;
+}
+
+.item .header {
+  width: 100%;
+  height: 32px;
+  margin: 0;
+  padding: 0;
+}
+
+.item .content {
+  margin-top: -16px;
+  min-height: 32px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.item .content .title {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  margin-bottom: 5px;
+}
+
+.item .content .date {
+  float: right;
+}
+
+.item .footer {
+  width: 100%;
+  height: 32px;
+  margin-top: -16px;
+  padding: 0;
+}
+
+.item .content .comments-link {
+  text-align: right;
+}
+
+#page {
+  width: 850px;
+  min-height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+#main {
+  width: 500px;
+  float: left;
+}
+
+#sidebar {
+  width: 250px;
+  float: right;
+}
+
+#sidebar .header {
+  width: 100%;
+  height: 16px;
+}
+
+#sidebar .footer {
+  width: 100%;
+  height: 16px;
+  margin-top: -8px;
+}
+
+#sidebar .content {
+  margin-top: -8px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+#sidebar .profile-image {
+  margin-top: 17px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+#sidebar .profile-image img {
+  border-style: solid;
+  border-width: 4px;
+}
+
+#sidebar .content li img {
+  vertical-align: middle;
+  margin-right: 2px;
+}
+
+#sidebar h4 {
+  margin-top: 1em;
+  padding-top: 1em;
+  border-top-style: solid;
+  border-top-width: 1px;
+  margin-bottom: 0.5em;
+}
+
+.item .content .title img {
+  vertical-align: middle;
+  padding: 0;
+}
+
+#header {
+  width: 850px;
+  margin-bottom: 2em;
+}
+
+#header .content {
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  height: 16px;
+}
+#header .footer {
+  height: 16px;
+  width: 100%;
+  margin-top: -8px;
+}
+
+#page .spacer {
+  height: 2em;
+}
+
+#footer {
+  width: 850px;
+  bottom: 0;
+  position: absolute;
+}
+
+#footer .content {
+  margin-top: -8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 4px;
+  text-align: center;
+}
+
+#footer .header {
+  height: 16px;
+  width: 100%;
+}
+
+#branding p, #branding h1 {
+  text-align: center;
+}
+
+#header ul {
+  position: relative;
+  float: right;
+  margin-right: 6em;
+}
+
+#header ul li {
+  display: inline;
+  position: relative;
+  padding-right: 2em;
+}
+
+#header ul li img {
+  vertical-align: middle;
+}
+
+#header ul li ul {
+  display: none;
+  position: absolute;
+  padding-top: 24px;
+  margin-left: -4px;
+  margin-right: 0;
+  top: 0;
+  left: -1px;
+  padding-left: 0;
+}
+
+#header ul li ul li {
+  display: block;
+  width: 11em;
+  padding: 2px;
+  border-left-style: solid;
+  border-left-width: 4px;
+  border-right-style: solid;
+  border-right-width: 4px;
+  border-bottom-width: 4px;
+  border-bottom-style: solid;
+  margin-top: -5px;
+  margin-left: 0;
+}
+#header ul li ul li:first-child {
+  margin-top: 1px;
+}
+#header ul li:hover ul {
+  display: inline;
+}
+
+#header ul li ul li {
+  margin-bottom: -1px;
+}
+
+.navigation .prev {
+  float: left;
+}
+
+.navigation .next {
+  float:  right;
+}
+
+.item.navigation {
+  margin-bottom: 8px;
+}
+
+.item.navigation .header {
+  height: 16px;
+}
+
+.item.navigation .content {
+  margin-top: -8px;
+  min-height: 16px;
+}
+
+.item.navigation .footer {
+  height: 16px;
+  margin-top: -8px;
+}
+
+#respond h3,
+h3#comments {
+  border-top-style: solid;
+  border-top-width: 1px;
+  padding-top: 1em;
+  
+}
+
+#respond h3 {
+  margin-bottom: 0.5em;
+}
+
+.comment-author {
+  float: left;
+  width: 100px;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.comment-text {
+  margin-left: 110px;
+}
+
+.comment-author cite {
+  display: block;
+}
+
+.item .commentlist p.date {
+  float: none;
+  text-align: right;
+}
+
+.commentlist li {
+  clear: left;
+  margin-top: 0.5em;
+  padding: 0.5em;
+}
+
+#respond textarea {
+  width: 100%;
+}
+
+.gkhphoto img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.item .content img {
+  padding: 0.25em;
+}

@@ -1,12 +1,36 @@
 <?php
+/**
+ * WordPress Comment Administration API.
+ *
+ * @package WordPress
+ * @subpackage Administration
+ */
 
+/**
+ * {@internal Missing Short Description}}
+ *
+ * @since unknown
+ * @uses $wpdb
+ *
+ * @param string $comment_author
+ * @param string $comment_date
+ * @return mixed Comment ID on success.
+ */
 function comment_exists($comment_author, $comment_date) {
 	global $wpdb;
 
-	return $wpdb->get_var("SELECT comment_post_ID FROM $wpdb->comments
-			WHERE comment_author = '$comment_author' AND comment_date = '$comment_date'");
+	$comment_author = stripslashes($comment_author);
+	$comment_date = stripslashes($comment_date);
+
+	return $wpdb->get_var( $wpdb->prepare("SELECT comment_post_ID FROM $wpdb->comments
+			WHERE comment_author = %s AND comment_date = %s", $comment_author, $comment_date) );
 }
 
+/**
+ * {@internal Missing Short Description}}
+ *
+ * @since unknown
+ */
 function edit_comment() {
 
 	$comment_post_ID = (int) $_POST['comment_post_ID'];
@@ -21,13 +45,12 @@ function edit_comment() {
 	$_POST['comment_content'] = $_POST['content'];
 	$_POST['comment_ID'] = (int) $_POST['comment_ID'];
 
-	foreach ( array ('aa', 'mm', 'jj', 'hh', 'mm') as $timeunit ) {
+	foreach ( array ('aa', 'mm', 'jj', 'hh', 'mn') as $timeunit ) {
 		if ( !empty( $_POST['hidden_' . $timeunit] ) && $_POST['hidden_' . $timeunit] != $_POST[$timeunit] ) {
 			$_POST['edit_date'] = '1';
 			break;
 		}
 	}
-
 
 	if (!empty ( $_POST['edit_date'] ) ) {
 		$aa = $_POST['aa'];
@@ -46,6 +69,14 @@ function edit_comment() {
 	wp_update_comment( $_POST);
 }
 
+/**
+ * {@internal Missing Short Description}}
+ *
+ * @since unknown
+ *
+ * @param unknown_type $id
+ * @return unknown
+ */
 function get_comment_to_edit( $id ) {
 	if ( !$comment = get_comment($id) )
 		return false;
@@ -58,21 +89,56 @@ function get_comment_to_edit( $id ) {
 
 	$comment->comment_author = format_to_edit( $comment->comment_author );
 	$comment->comment_author_email = format_to_edit( $comment->comment_author_email );
-	$comment->comment_author_url = clean_url($comment->comment_author_url);
 	$comment->comment_author_url = format_to_edit( $comment->comment_author_url );
+	$comment->comment_author_url = esc_url($comment->comment_author_url);
 
 	return $comment;
 }
 
+/**
+ * {@internal Missing Short Description}}
+ *
+ * @since unknown
+ * @uses $wpdb
+ *
+ * @param int $post_id Post ID
+ * @return unknown
+ */
 function get_pending_comments_num( $post_id ) {
 	global $wpdb;
-	$post_id = (int) $post_id;
-	$pending = $wpdb->get_var( "SELECT COUNT(*) FROM $wpdb->comments WHERE comment_post_ID = $post_id AND comment_approved = '0'" );
-	return $pending;
+
+	$single = false;
+	if ( !is_array($post_id) ) {
+		$post_id = (array) $post_id;
+		$single = true;
+	}
+	$post_id = array_map('intval', $post_id);
+	$post_id = "'" . implode("', '", $post_id) . "'";
+
+	$pending = $wpdb->get_results( "SELECT comment_post_ID, COUNT(comment_ID) as num_comments FROM $wpdb->comments WHERE comment_post_ID IN ( $post_id ) AND comment_approved = '0' GROUP BY comment_post_ID", ARRAY_N );
+
+	if ( empty($pending) )
+		return 0;
+
+	if ( $single )
+		return $pending[0][1];
+
+	$pending_keyed = array();
+	foreach ( $pending as $pend )
+		$pending_keyed[$pend[0]] = $pend[1];
+
+	return $pending_keyed;
 }
 
-// Add avatars to relevant places in admin, or try to
-
+/**
+ * Add avatars to relevant places in admin, or try to.
+ *
+ * @since unknown
+ * @uses $comment
+ *
+ * @param string $name User name.
+ * @return string Avatar with Admin name.
+ */
 function floated_admin_avatar( $name ) {
 	global $comment;
 
@@ -88,7 +154,12 @@ function floated_admin_avatar( $name ) {
 	return "$avatar $name";
 }
 
-if ( is_admin() && ('edit-comments.php' == $pagenow || 'edit.php' == $pagenow) ) {
+function enqueue_comment_hotkeys_js() {
+	if ( 'true' == get_user_option( 'comment_shortcuts' ) )
+		wp_enqueue_script( 'jquery-table-hotkeys' );
+}
+
+if ( is_admin() && isset($pagenow) && ('edit-comments.php' == $pagenow || 'edit.php' == $pagenow) ) {
 	if ( get_option('show_avatars') )
 		add_filter( 'comment_author', 'floated_admin_avatar' );
 }

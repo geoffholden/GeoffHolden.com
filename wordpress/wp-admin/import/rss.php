@@ -1,5 +1,20 @@
 <?php
+/**
+ * RSS Importer
+ *
+ * @package WordPress
+ * @subpackage Importer
+ */
 
+/**
+ * RSS Importer
+ *
+ * Will process a RSS feed for importing posts into WordPress. This is a very
+ * limited importer and should only be used as the last resort, when no other
+ * importer is available.
+ *
+ * @since unknown
+ */
 class RSS_Import {
 
 	var $posts = array ();
@@ -7,6 +22,7 @@ class RSS_Import {
 
 	function header() {
 		echo '<div class="wrap">';
+		screen_icon();
 		echo '<h2>'.__('Import RSS').'</h2>';
 	}
 
@@ -25,6 +41,10 @@ class RSS_Import {
 		echo '<p>'.__('Howdy! This importer allows you to extract posts from an RSS 2.0 file into your blog. This is useful if you want to import your posts from a system that is not handled by a custom import tool. Pick an RSS file to upload and click Import.').'</p>';
 		wp_import_upload_form("admin.php?import=rss&amp;step=1");
 		echo '</div>';
+	}
+
+	function _normalize_tag( $matches ) {
+		return '<' . strtolower( $matches[1] );
 	}
 
 	function get_posts() {
@@ -87,7 +107,7 @@ class RSS_Import {
 			}
 
 			// Clean up content
-			$post_content = preg_replace('|<(/?[A-Z]+)|e', "'<' . strtolower('$1')", $post_content);
+			$post_content = preg_replace_callback('|<(/?[A-Z]+)|', array( &$this, '_normalize_tag' ), $post_content);
 			$post_content = str_replace('<br>', '<br />', $post_content);
 			$post_content = str_replace('<hr>', '<hr />', $post_content);
 
@@ -113,7 +133,7 @@ class RSS_Import {
 				if ( is_wp_error( $post_id ) )
 					return $post_id;
 				if (!$post_id) {
-					_e("Couldn't get post ID");
+					_e('Couldn&#8217;t get post ID');
 					return;
 				}
 

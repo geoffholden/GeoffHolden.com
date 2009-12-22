@@ -1,0 +1,100 @@
+body {
+  background-color: #284a56;
+}
+
+a {
+  color: #a8c2cc;
+}
+
+.item, #sidebar, #header, #footer {
+  background-color: #65757b;
+  color: black;
+}
+
+.item .header {
+  background-image: url('../images/item-top.png');
+}
+
+.item .content {
+}
+
+.item .footer {
+  background-image: url('../images/item-bottom.png');
+}
+
+.item.navigation .header {
+  background-image: url('../images/nav-top.png');
+}
+
+.item.navigation .footer {
+  background-image: url('../images/nav-bottom.png');
+}
+
+.navigation a {
+  color: #284a56;
+}
+
+#sidebar .header {
+  background-image: url('../images/sidebar-top.png');
+}
+
+#sidebar .footer {
+  background-image: url('../images/sidebar-bottom.png');
+}
+
+.item .content .date,
+.item .content .date a,
+.item .content .comments-link a {
+  color: #284a56;
+}
+
+.item .content .title {
+  border-bottom-color: #284a56;
+}
+
+.item .content .title a {
+  color: black;
+}
+
+.item .content blockquote:before,
+.item .content blockquote:after {
+  color: #284a56;
+}
+
+#header .footer {
+  background-image: url('../images/page-bottom.png');
+}
+
+#footer .header {
+  background-image: url('../images/page-top.png');
+}
+
+#footer, #footer a {
+  color: #284a56;
+}
+
+#branding h1 a {
+  color: black;
+}
+
+#header ul li ul li {
+  background-color: #65757b;
+  border-color: #284a56;
+}
+
+#sidebar .profile-image img {
+  border-color: #284a56;
+}
+
+#sidebar h4 {
+  border-color: #284a56;
+}
+
+#header a,
+#sidebar a {
+  color: black;
+}
+
+.commentlist li.odd {
+  background-color: #7f9299;
+}
