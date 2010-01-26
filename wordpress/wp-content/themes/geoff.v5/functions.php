@@ -84,9 +84,18 @@ function gkh_get_greader() {
     $sourcetitle = $sourcetags[0]['data'];
     $sourcetags = $source->get_source_tags(SIMPLEPIE_NAMESPACE_ATOM_10 , 'link');
     $sourcelink = $sourcetags[0]['attribs']['']['href'];
+    $description = strip_tags($item->get_description(), '<p><a><img>');
+    $words = explode(' ', $description, 81);
+    $continued_text = '<p><a href="' . $item->get_link() . '">Continued...</a></p>';
+    if (count($words)> 80) {
+      array_pop($words);
+      array_push($words, $continued_text);
+      $description = implode(' ', $words);
+    }
+
     $result[] = array(
       'class' => 'greader',
-      'content' => preg_replace('/(height|width)="?[0-9]+"?/i', '', $item->get_description()),
+      'content' => preg_replace('/(height|width)="?[0-9]+"?/i', '', $description),
       'date' => $item->get_date("Y-m-d H:i:s"),
       'title' => $item->get_title(),
       'link' => $item->get_link(),
