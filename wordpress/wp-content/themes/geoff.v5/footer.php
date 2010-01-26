@@ -10,6 +10,7 @@ Icons from <a href="http://komodomedia.com">Komodo Media</a>
         </div>
       </div>
     </div><!-- page -->
+<?php wp_footer(); ?>
   </body>
 </html>
 
