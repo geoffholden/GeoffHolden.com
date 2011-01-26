@@ -1,0 +1,16 @@
+ul.links li {
+   background-image: url('underline.png');
+   background-position: bottom center;
+   background-repeat: repeat-x;
+   padding-top: 5px;
+   padding-bottom: 5px;
+}
+
+#photo {
+   margin-right: -50px;
+}
+
+a {
+   color: #242358;
+}
+
