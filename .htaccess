@@ -1,3 +1,5 @@
+AddType x-mapp-php5 .php
+
 # BEGIN Custom mod_rewrite rules
 
 # Direct display anything that's a real file
@@ -24,10 +26,10 @@ RewriteRule ^admin/? /wordpress/wp-admin/ [R=permanent,L]
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteBase /GeoffHolden.com/
+RewriteBase /
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /GeoffHolden.com/index.php [L]
+RewriteRule . /index.php [L]
 </IfModule>
 
 # END WordPress
