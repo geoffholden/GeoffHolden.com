@@ -107,24 +107,28 @@ ul.links li + li {
    -moz-transform: rotate(1deg);
    -webkit-transform: rotate(1deg);
    -o-transform: rotate(1deg);
+   -ms-transform: rotate(1deg);
    transform: rotate(1deg);
 }
 .links li:nth-child(even):hover {
    -moz-transform: rotate(-2deg);
    -webkit-transform: rotate(-2deg);
    -o-transform: rotate(-2deg);
+   -ms-transform: rotate(-2deg);
    transform: rotate(-2deg);
 }
 .links li:nth-child(odd) {
    -moz-transform: rotate(-1deg);
    -webkit-transform: rotate(-1deg);
    -o-transform: rotate(-1deg);
+   -ms-transform: rotate(-1deg);
    transform: rotate(-1deg);
 }
 .links li:nth-child(odd):hover {
    -moz-transform: rotate(2deg);
    -webkit-transform: rotate(2deg);
    -o-transform: rotate(2deg);
+   -ms-transform: rotate(2deg);
    transform: rotate(2deg);
 }
 
@@ -132,17 +136,11 @@ ul.links li + li {
    -moz-transform: rotate(-30deg);
    -webkit-transform: rotate(-30deg);
    -o-transform: rotate(-30deg);
+   -ms-transform: rotate(-30deg);
    transform: rotate(-30deg);
    position: absolute;
    top: 1em;
    left: 1em;
-   -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.866025403784439, M12=0.4999999999999993, M21=-0.4999999999999993, M22=0.866025403784439, SizingMethod='auto expand')";
-   filter: progid:DXImageTransform.Microsoft.Matrix(
-            M11=0.866025403784439,
-            M12=0.4999999999999993,
-            M21=-0.4999999999999993,
-            M22=0.866025403784439,
-            SizingMethod='auto expand');
 }
 
 #margin li {
@@ -162,12 +160,14 @@ ul.links li + li {
    -moz-transform: rotate(-5deg);
    -webkit-transform: rotate(-5deg);
    -o-transform: rotate(-5deg);
+   -ms-transform: rotate(-5deg);
    transform: rotate(-5deg);
 }
 #margin li:nth-child(odd):hover {
    -moz-transform: rotate(5deg);
    -webkit-transform: rotate(5deg);
    -o-transform: rotate(5deg);
+   -ms-transform: rotate(5deg);
    transform: rotate(5deg);
 }
 
@@ -189,6 +189,7 @@ ul.links li + li {
    -moz-transform: rotate(-8deg);
    -webkit-transform: rotate(-8deg);
    -o-transform: rotate(-8deg);
+   -ms-transform: rotate(-8deg);
    transform: rotate(-8deg);
 }
 
