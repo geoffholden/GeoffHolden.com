@@ -7,18 +7,20 @@ RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^.*$ - [L]
 
-# Add the trailing slashes
-RewriteRule ^(.+[^/])$ /$1/ [R=permanent,L]
-
 # Redirect old resume URL to resume.geoffholden.com
 RewriteRule ^resume.html http://resume.geoffholden.com/ [R=permanent,L]
 
-# Redirect any gallery stuff to gkhphoto.com
-RewriteRule ^g2/?$ http://gkhphoto.com/gallery/ [R=permanent,L]
-RewriteRule ^g2/.*$ http://gkhphoto.com/gallery/ [R=permanent,L]
+# Social Network Shortcuts
+RewriteRule ^(g|google)?plus/? https://plus.google.com/116157226367039341889/about [R=302,L]
+RewriteRule ^flickr/? http://www.flickr.com/photos/geoffholden/ [R=302,L]
+RewriteRule ^500(px)?/? http://500px.com/geoffholden [R=302,L]
+RewriteRule ^twitter/? http://twitter.com/gholden/ [R=302,L]
 
 # Admin Link Shortcut
 RewriteRule ^admin/? /wordpress/wp-admin/ [R=permanent,L]
+
+# Add the trailing slashes
+RewriteRule ^(.+[^/])$ /$1/ [R=permanent,L]
 
 # END Custom mod_rewrite rules
 
