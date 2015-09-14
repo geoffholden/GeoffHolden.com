@@ -4,6 +4,9 @@
     text-decoration: none;
     color: black; }
 
+  a[href^='http://']:after, a[href^='https://'] {
+    content: " (" attr(href) ") "; }
+
   .container {
     width: 1000px;
     margin: 0 auto;
@@ -100,7 +103,7 @@
       page-break-before: avoid !important; }
     dl strong {
       float: right;
-      margin-top: -3em;
+      margin-top: -2.5em;
       text-align: right; }
     dl em {
       font-size: 130%;

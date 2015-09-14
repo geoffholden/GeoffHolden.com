@@ -26,8 +26,12 @@ h1, h2, h3, h4, .resume > ul li p {
   position: relative;
   padding: 10px 20px; }
 
-a {
+blockquote a, #footer + p a {
   color: #990003; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
 
 a[href$='.pdf'] {
   display: inline-block;
