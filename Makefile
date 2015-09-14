@@ -30,8 +30,8 @@ watchhugo:
 
 .ONESHELL:
 deploy: static
-	cd public
-	git add -A
-	git commit -m "rebuilding site $$(date)"
+	cd public; \
+	git add -A; \
+	git commit -m "rebuilding site $$(date)";\
 	git push origin master
 
