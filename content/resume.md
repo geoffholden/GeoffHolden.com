@@ -132,8 +132,8 @@ Bachelor of Engineering in Computer Engineering
 
 ### Publications {#publications}
 
-* **Holden, G.**, Cook, A., Masek, V. "Development of an Energy-Based Routing Protocol for Underwater Networks", *21st Annual Newfoundland Electrical and Computer Engineering Conference (NECEC 2012)*
 * Cook, A., Masek, V., Press, A., **Holden, G.**, Boyd, R. "The Seaformatics Technology Demonstration Project", *OCEANS '14 MTS/IEEE*
+* **Holden, G.**, Cook, A., Masek, V. "Development of an Energy-Based Routing Protocol for Underwater Networks", *21st Annual Newfoundland Electrical and Computer Engineering Conference (NECEC 2012)*
 
 ------
 

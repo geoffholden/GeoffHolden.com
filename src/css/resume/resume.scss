@@ -10,11 +10,11 @@
 }
 
 body {
-    font-family: 'Cardo', 'Hoefler Text', 'Times New Roman', 'Times', serif;
+    font-family: 'Cardo', 'Times New Roman', 'Times', serif;
     color: #444;
 }
 h1, h2, h3, h4, .resume > ul li p {
-    font-family: "Open Sans", Futura, "Century Gothic", AppleGothic, sans-serif;
+    font-family: "Open Sans", sans-serif;
 }
 
 .container {
@@ -47,6 +47,7 @@ a[href$='.pdf'] {
     padding: 6px 12px;
     margin-bottom: 6px;
     text-decoration: none;
+    font-family: "Open Sans", sans-serif;
 }
 
 blockquote {
@@ -79,7 +80,7 @@ h1 {
     padding: 0;
     font-size: 36px;
     letter-spacing: -1px;
-    font-weight: normal;
+    font-weight: bold;
 }
 h2 {
     margin: 0;
@@ -105,7 +106,6 @@ h3+p {
     font-size: 104%;
     line-height: 24px;
 }
-
 
 ul {
     margin: 0;
@@ -138,6 +138,19 @@ dl ul, #publications + ul {
     li {
         margin-left: 2em;
     }
+}
+
+h3#publications+ul {
+    padding-top: 0.7em;
+}
+
+#publications + ul li {
+    width: auto;
+    float: none;
+    font-size: 80%;
+}
+#publications + ul li + li {
+    margin-top: 0.25em;
 }
 
 ol {
