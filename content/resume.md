@@ -60,7 +60,7 @@ tiny microcontrollers.
 
 ### Experience {#experience}
 
-SEAformatics Group,<br /> Memorial University of Newfoundland
+[SEAformatics Group,<br /> Memorial University of Newfoundland](http://seaformatics.ca)
 : *Research and Project Engineer*
   __St. John's, NL  
   2010-Present__
@@ -75,11 +75,11 @@ SEAformatics Group,<br /> Memorial University of Newfoundland
 
 <div></div>
 
-Progress Software
+[Progress Software](http://progress.com)
 : *Software Engineer*
   __St. John's, NL  
   2007-2009__
-  * Created a Requirement Tracability Matrix web application using Ruby on
+  * Created a Requirement Traceability Matrix web application using Ruby on
     Rails
   * Wrote a set of user interface guidelines to help avoid
     common mistakes, and increase inter-product consistency
@@ -90,7 +90,7 @@ Progress Software
 
 <div></div>
 
-Google Inc.
+[Google Inc.](http://google.com)
 : *Site Reliability Engineer*
   __Mountain View, CA  
   2006-2007__
@@ -103,7 +103,7 @@ Google Inc.
 
 <div></div>
 
-Verafin Inc.
+[Verafin Inc.](http://verafin.com)
 : *System Architect*
   __St. John's, NL  
   2004-2005__
@@ -119,13 +119,13 @@ Verafin Inc.
 ### Education {#education}
 
 Bachelor of Engineering in Computer Engineering
-: *Memorial University of Newfoundland*
+: *[Memorial University of Newfoundland](http://www.mun.ca)*
   __St. John's, NL  
   1998-2004__
   Memorial's computer engineering program covers a wide breath of topics, such
   as software development, analog and digital circuits, microprocessors, signal
   processing, telecommunications, and instrumentation and controls.
-  It is also a co-operative education program that included six seperate four
+  It is also a co-operative education program that included six separate four
   month work terms in the industry.
 
 ------
@@ -133,11 +133,11 @@ Bachelor of Engineering in Computer Engineering
 ### Volunteer {#volunteer}
 
 IEEE
-: IEEE Newfoundland and Labrador Section
+: [IEEE Newfoundland and Labrador Section](http://newfoundlandlabrador.ieee.ca)
   * Currently membership development chair
   * Served as treasurer from 2010-2013
   * Served as webmaster from 2008-2009
-: Treasurer -- 14th Canadian Workshop on Information Theory (CWIT 2015)
+: Treasurer -- [14th Canadian Workshop on Information Theory (CWIT 2015)](http://cwit.ca/2015/)
 : Publications Chair -- 22nd Canadian Conference on Electrical and Computer Engineering (CCECE09)
   * Verified that all the papers were formatted correctly for publication, and
     worked with the authors to fix any issues.
@@ -147,13 +147,13 @@ IEEE
   * Designed and implemented a web-based layout for the electronic proceedings
     on USB key.
   * Submitted the papers to be included in IEEE Xplore.
-: Publications Comittee Member -- 17th International Engineering Management Conference (IEMC2005)
+: Publications Committee Member -- 17th International Engineering Management Conference (IEMC2005)
 
 St. John's Linux Users Group
 : 
-  Was a key orginizer and very active member of the St. John’s Linux Users
-  Group. This involved both giving regular seminars and organizing a moderately
-  sized group.
+  Was a key organizer and very active member of the group from 1998 to 2006.
+  This involved both giving regular seminars and organizing a moderately sized
+  group.
 
 ------
 
