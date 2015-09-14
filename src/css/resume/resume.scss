@@ -133,8 +133,8 @@ ul dl {
     }
 }
 
-dl ul {
-    list-style: disc outside none;
+dl ul, #publications + ul {
+    list-style: square outside none;
     li {
         margin-left: 2em;
     }
