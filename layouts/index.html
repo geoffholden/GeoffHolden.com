@@ -8,12 +8,12 @@
    <link href="http://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet" type="text/css" />
    <link href="http://fonts.googleapis.com/css?family=Reenie+Beanie" rel="stylesheet" type="text/css" />
    <link href="style.css" rel="stylesheet" type="text/css" />
-   <!--[if lt IE 9]>
+   {{ "<!--[if lt IE 9]>" | safeHTML }}
       <link rel="stylesheet" type="text/css" href="style_ie.css" />
-   <![endif]-->
-   <!--[if IE 9]>
+   {{ "<![endif]-->" | safeHTML }}
+   {{ "<!--[if IE 9]>" | safeHTML }}
       <link rel="stylesheet" type="text/css" href="style_ie9.css" />
-   <![endif]-->
+   {{ "<![endif]-->" | safeHTML }}
    <script type="text/javascript">
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-230660-1']);
@@ -35,7 +35,7 @@
       <div id="content_wrap">
          <div id="content">
             <ul class="links">
-               <li><a href="http://resume.geoffholden.com/" rel="me">R&eacute;sum&eacute;</a></li>
+               <li><a href="resume/" rel="me">R&eacute;sum&eacute;</a></li>
                <li><a href="http://gkhphoto.com/" rel="me">Photography</a></li>
             </ul>
 
@@ -47,12 +47,13 @@
                </div>
             </div>
 
-            <p>Hi, I'm Geoff Holden and you've found my little corner of the Internet.</p>
-            <p>I'm a software developer by trade, with experience in system administration and a little bit of web design. You can find more information about my professional life via my <a href="http://resume.geoffholden.com/" rel="me">r&eacute;sum&eacute;</a> or on <a href="http://ca.linkedin.com/in/geoffholden/" rel="me">LinkedIn</a>.</p>
-            <p>By night, I'm an amateur photographer, focusing mostly on landscapes around Newfoundland (and elsewhere when I have the opportunity to travel). My photography can be seen on <a href="http://gkhphoto.com/" rel="me">GKH Photography</a> or on <a href="http://www.flickr.com/photos/geoffholden/" rel="me">Flickr</a>.</p>
+{{ range .Data.Pages }}
+    {{if eq .RelPermalink "/index.html" }} {{.Content}} {{end}}
+{{ end }}
+
          </div>
          <div id="margin">
-            <div id="hello"><a href="mailto:gholden@ieee.org" title="gholden@ieee.org">Hello?</a></div>
+            <div id="hello"><a href="mailto:geoff@geoffholden.com" title="geoff@geoffholden.com">Hello?</a></div>
             <br />
             Connect
             <ul>
@@ -63,7 +64,7 @@
                <li><a href="http://www.last.fm/user/cnslcwby/" title="last.fm: cnslcwby" rel="me"><img src="LastFM.png" alt="last.fm: cnslcwby" />Last.fm</a></li>
                <li><a href="http://ca.linkedin.com/in/geoffholden/" title="LinkedIn: Geoff Holden" rel="me"><img src="LinkedIn.png" alt="LinkedIn: Geoff Holden" />LinkedIn</a></li>
                <li><a href="http://delicious.com/cnslcwby/" title="del.icio.us: cnslcwby" rel="me"><img src="Delicious.png" alt="del.icio.us: cnslcwby" />del.icio.us</a></li>
-               <li><a href="mailto:gholden@ieee.org" title="Email: gholden@ieee.org"><img src="Contact.png" alt="Email: gholden@ieee.org" />Email</a></li>
+               <li><a href="mailto:geoff@geoffholden.com" title="Email: geoff@geoffholden.com"><img src="Contact.png" alt="Email: geoff@geoffholden.com" />Email</a></li>
             </ul>
          </div>
          <div style="clear: both;"></div>

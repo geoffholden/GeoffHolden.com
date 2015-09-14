@@ -1,0 +1,10 @@
+baseurl = "http://geoffholden.com/"
+languageCode = "en-us"
+title = "Geoff Holden"
+
+[blackfriday]
+  extensions = ["definitionLists","headerIds"]
+  extensionsmask = ["autoHeaderIds"]
+  plainIdAnchors = true
+
+

@@ -1,5 +1,0 @@
-User-agent: *
-Disallow: /20*
-Disallow: /content/
-Disallow: /category/
-
