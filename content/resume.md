@@ -130,6 +130,33 @@ Bachelor of Engineering in Computer Engineering
 
 ------
 
+### Volunteer {#volunteer}
+
+IEEE
+: IEEE Newfoundland and Labrador Section
+  * Currently membership development chair
+  * Served as treasurer from 2010-2013
+  * Served as webmaster from 2008-2009
+: Treasurer -- 14th Canadian Workshop on Information Theory (CWIT 2015)
+: Publications Chair -- 22nd Canadian Conference on Electrical and Computer Engineering (CCECE09)
+  * Verified that all the papers were formatted correctly for publication, and
+    worked with the authors to fix any issues.
+  * Compiled the papers for both the print and electronic proceedings.
+  * Sourced USB keys for electronic proceedings and did the logo design to be
+    printed on the keys.
+  * Designed and implemented a web-based layout for the electronic proceedings
+    on USB key.
+  * Submitted the papers to be included in IEEE Xplore.
+: Publications Comittee Member -- 17th International Engineering Management Conference (IEMC2005)
+
+St. John's Linux Users Group
+: 
+  Was a key orginizer and very active member of the St. John’s Linux Users
+  Group. This involved both giving regular seminars and organizing a moderately
+  sized group.
+
+------
+
 ### Footer {#footer}
 
 Geoff Holden -- [geoff@geoffholden.com](mailto:geoff@geoffholden.com) -- (709) 727-0379
