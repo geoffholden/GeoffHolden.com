@@ -114,9 +114,9 @@ ul dl {
     font-size: .8em;
     line-height: 1.5em; }
 
-dl ul {
-  list-style: disc outside none; }
-  dl ul li {
+dl ul, #publications + ul {
+  list-style: square outside none; }
+  dl ul li, #publications + ul li {
     margin-left: 2em; }
 
 ol {

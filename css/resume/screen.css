@@ -83,6 +83,14 @@
     width: auto;
     float: none; }
 
+  #publications + ul li {
+    width: auto;
+    float: none;
+    font-size: 80%; }
+
+  #publications + ul li + li {
+    margin-top: 0.25em; }
+
   ul dl dt {
     font-size: 122%;
     font-weight: normal;
