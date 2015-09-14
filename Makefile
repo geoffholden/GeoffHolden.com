@@ -15,9 +15,13 @@ public/resume/resume.pdf: $(css) public/resume/index.html
 	wkhtmltopdf \
 		-s Letter \
 		--print-media-type \
+		--footer-center "[title]" \
+		--footer-left "[isodate]" \
 		--footer-right "Page [page]/[toPage]" \
-		--footer-font-size 8 \
-		--footer-font-name "Hoefler Text" \
+		--footer-font-size 6 \
+		--footer-font-name "Cardo" \
+		--no-outline \
+		--quiet \
 		public/resume/index.html public/resume/resume.pdf
 
 watch: watchsass watchhugo
