@@ -6,7 +6,7 @@ static: css hugo public/resume/resume.pdf
 css: $(css)
 
 static/%.css: src/%.scss
-	sass $< $@
+	sass --style compressed $< $@
 
 hugo:
 	@hugo
