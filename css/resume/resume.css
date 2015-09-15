@@ -165,7 +165,8 @@ dl {
     font-size: 80%;
     line-height: 1.4em; }
   dl strong {
-    display: block; }
+    display: block;
+    white-space: nowrap; }
   dl em {
     display: block;
     font-size: 110%;
@@ -179,5 +180,3 @@ dl {
   width: 100%;
   font-size: 11px;
   text-align: center; }
-
-/*# sourceMappingURL=resume.css.map */
