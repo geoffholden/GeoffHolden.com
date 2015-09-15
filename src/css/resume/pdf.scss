@@ -133,7 +133,16 @@
             font-size: 130%;
             font-style: normal;
         }
-
+        ul {
+            display: block;
+        }
     }
 
+    #footer + p {
+        display: none;
+    }
+
+    #footer + p + hr {
+        display: none;
+    }
 }

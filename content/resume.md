@@ -140,11 +140,11 @@ Bachelor of Engineering in Computer Engineering
 ### Volunteer {#volunteer}
 
 IEEE
-: [IEEE Newfoundland and Labrador Section](http://newfoundlandlabrador.ieee.ca)
+: IEEE Newfoundland and Labrador Section
   * Currently membership development chair
   * Served as treasurer from 2010-2013
   * Served as webmaster from 2008-2009
-: Treasurer -- [14th Canadian Workshop on Information Theory (CWIT 2015)](http://cwit.ca/2015/)
+: Treasurer -- 14th Canadian Workshop on Information Theory (CWIT 2015)
 : Publications Chair -- 22nd Canadian Conference on Electrical and Computer Engineering (CCECE09)
   * Verified that all the papers were formatted correctly for publication, and
     worked with the authors to fix any issues.
