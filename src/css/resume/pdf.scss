@@ -109,12 +109,14 @@
     }
 
     dl {
-        margin: .7em 0 0 175px;
-        page-break-inside: avoid !important;
+        margin: .7em 0 0 155px;
         display: block;
         width:79%;
         float: left;
-        dt {}
+        dt {
+            page-break-inside: avoid !important;
+            page-break-after: avoid !important;
+        }
         dd {
             page-break-inside: avoid !important;
         }

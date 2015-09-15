@@ -20,6 +20,8 @@ public/resume/resume.pdf: $(css) public/resume/index.html
 		--footer-right "Page [page]/[toPage]" \
 		--footer-font-size 6 \
 		--footer-font-name "Cardo" \
+		--footer-spacing 12.7 \
+		--margin-bottom 19mm \
 		--no-outline \
 		--quiet \
 		public/resume/index.html public/resume/resume.pdf
