@@ -32,9 +32,7 @@ St. John&amp;rsquo;s, NL, Canada&lt;br /&gt;
 
 &lt;h3 id=&#34;summary&#34;&gt;Summary&lt;/h3&gt;
 
-&lt;p&gt;I&amp;rsquo;m a software developer with 10+ years of experience designing and writing
-code covering large scale object oriented designs all the way down to to
-tiny microcontrollers.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m a software developer with 10+ years of experience designing and writing code covering large scale object oriented designs all the way down to to tiny microcontrollers.&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -44,24 +42,19 @@ tiny microcontrollers.&lt;/p&gt;
 &lt;li&gt;&lt;p&gt;Development&lt;/p&gt;
 
 &lt;dl&gt;
-&lt;dd&gt;I design and develop software for platforms of all sizes, including
-microcontrollers, embedded Linux, mobile devices, desktop computers, and
-distributed systems.&lt;/dd&gt;
+&lt;dd&gt;I design and develop software for platforms of all sizes, including microcontrollers, embedded Linux, mobile devices, desktop computers, and distributed systems.&lt;/dd&gt;
 &lt;/dl&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Operations&lt;/p&gt;
 
 &lt;dl&gt;
-&lt;dd&gt;My background in system administration and operations gives me valuable
-perspectives on designing for deployment, configuration management and
-scalability.&lt;/dd&gt;
+&lt;dd&gt;My background in system administration and operations gives me valuable perspectives on designing for deployment, configuration management and scalability.&lt;/dd&gt;
 &lt;/dl&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Problem Solving&lt;/p&gt;
 
 &lt;dl&gt;
-&lt;dd&gt;My natural tendency for problem solving and debugging assists with tracking
-down and rectifying issues in codebases and environments alike.&lt;/dd&gt;
+&lt;dd&gt;My natural tendency for problem solving and debugging assists with tracking down and rectifying issues in codebases and environments alike.&lt;/dd&gt;
 &lt;/dl&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -90,14 +83,11 @@ down and rectifying issues in codebases and environments alike.&lt;/dd&gt;
 
 &lt;dl&gt;
 &lt;dt&gt;&lt;a href=&#34;http://seaformatics.ca&#34;&gt;SEAformatics Group,&lt;br /&gt; Memorial University of Newfoundland&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;&lt;em&gt;Research and Project Engineer&lt;/em&gt;
-&lt;strong&gt;St. John&amp;rsquo;s, NL&lt;br /&gt;
+&lt;dd&gt;&lt;em&gt;Research and Project Engineer&lt;/em&gt; &lt;strong&gt;St. John&amp;rsquo;s, NL&lt;br /&gt;
 2010-Present&lt;/strong&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Design and development of a power-efficient stack of microcontrollers to
-perform data acquisition, communications, and battery charging in a subsea
-environment.&lt;/li&gt;
+&lt;li&gt;Design and development of a power-efficient stack of microcontrollers to perform data acquisition, communications, and battery charging in a subsea environment.&lt;/li&gt;
 &lt;li&gt;Development of a web-based data visualization application in Ruby on Rails.&lt;/li&gt;
 &lt;li&gt;Deployment and testing of sub-sea acoustic modems.&lt;/li&gt;
 &lt;li&gt;Software development on embedded Linux, Arduino, and Ruby on Rails.&lt;/li&gt;
@@ -110,15 +100,12 @@ environment.&lt;/li&gt;
 
 &lt;dl&gt;
 &lt;dt&gt;&lt;a href=&#34;http://progress.com&#34;&gt;Progress Software&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;&lt;em&gt;Software Engineer&lt;/em&gt;
-&lt;strong&gt;St. John&amp;rsquo;s, NL&lt;br /&gt;
+&lt;dd&gt;&lt;em&gt;Software Engineer&lt;/em&gt; &lt;strong&gt;St. John&amp;rsquo;s, NL&lt;br /&gt;
 2007-2009&lt;/strong&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Created a Requirement Traceability Matrix web application using Ruby on
-Rails&lt;/li&gt;
-&lt;li&gt;Wrote a set of user interface guidelines to help avoid
-common mistakes, and increase inter-product consistency&lt;/li&gt;
+&lt;li&gt;Created a Requirement Traceability Matrix web application using Ruby on Rails&lt;/li&gt;
+&lt;li&gt;Wrote a set of user interface guidelines to help avoid common mistakes, and increase inter-product consistency&lt;/li&gt;
 &lt;li&gt;Fixed bugs and created demos for Apache ActiveMQ&lt;/li&gt;
 &lt;li&gt;Bug fixing and feature development for Artix Data Services&lt;/li&gt;
 &lt;li&gt;Produced and managed patches for the Artix product&lt;/li&gt;
@@ -130,13 +117,11 @@ common mistakes, and increase inter-product consistency&lt;/li&gt;
 
 &lt;dl&gt;
 &lt;dt&gt;&lt;a href=&#34;http://google.com&#34;&gt;Google Inc.&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;&lt;em&gt;Site Reliability Engineer&lt;/em&gt;
-&lt;strong&gt;Mountain View, CA&lt;br /&gt;
+&lt;dd&gt;&lt;em&gt;Site Reliability Engineer&lt;/em&gt; &lt;strong&gt;Mountain View, CA&lt;br /&gt;
 2006-2007&lt;/strong&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Automation of tasks through the development of scripts and administration
-tools.&lt;/li&gt;
+&lt;li&gt;Automation of tasks through the development of scripts and administration tools.&lt;/li&gt;
 &lt;li&gt;Configuration of system and network parameters.&lt;/li&gt;
 &lt;li&gt;Monitoring of system stability and performance.&lt;/li&gt;
 &lt;li&gt;Ensuring 24x7 operation of cluster.&lt;/li&gt;
@@ -148,16 +133,13 @@ tools.&lt;/li&gt;
 
 &lt;dl&gt;
 &lt;dt&gt;&lt;a href=&#34;http://verafin.com&#34;&gt;Verafin Inc.&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;&lt;em&gt;System Architect&lt;/em&gt;
-&lt;strong&gt;St. John&amp;rsquo;s, NL&lt;br /&gt;
+&lt;dd&gt;&lt;em&gt;System Architect&lt;/em&gt; &lt;strong&gt;St. John&amp;rsquo;s, NL&lt;br /&gt;
 2004-2005&lt;/strong&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Software design and development.&lt;/li&gt;
 &lt;li&gt;Researching and implementing new technology.&lt;/li&gt;
-&lt;li&gt;Responsible for the architecture and design of the technical environments
-(servers, storage, database, middleware, software, network and desktop) for
-the various developed and integrated applications.&lt;/li&gt;
+&lt;li&gt;Responsible for the architecture and design of the technical environments (servers, storage, database, middleware, software, network and desktop) for the various developed and integrated applications.&lt;/li&gt;
 &lt;li&gt;Responsible for the management of the network, servers, and workstations.&lt;/li&gt;
 &lt;/ul&gt;&lt;/dd&gt;
 &lt;/dl&gt;
@@ -168,14 +150,8 @@ the various developed and integrated applications.&lt;/li&gt;
 
 &lt;dl&gt;
 &lt;dt&gt;Bachelor of Engineering in Computer Engineering&lt;/dt&gt;
-&lt;dd&gt;&lt;em&gt;&lt;a href=&#34;http://www.mun.ca&#34;&gt;Memorial University of Newfoundland&lt;/a&gt;&lt;/em&gt;
-&lt;strong&gt;St. John&amp;rsquo;s, NL&lt;br /&gt;
-1998-2004&lt;/strong&gt;
-Memorial&amp;rsquo;s computer engineering program covers a wide breath of topics, such
-as software development, analog and digital circuits, microprocessors, signal
-processing, telecommunications, and instrumentation and controls.
-It is also a co-operative education program that included six separate four
-month work terms in the industry.&lt;/dd&gt;
+&lt;dd&gt;&lt;em&gt;&lt;a href=&#34;http://www.mun.ca&#34;&gt;Memorial University of Newfoundland&lt;/a&gt;&lt;/em&gt; &lt;strong&gt;St. John&amp;rsquo;s, NL&lt;br /&gt;
+1998-2004&lt;/strong&gt; Memorial&amp;rsquo;s computer engineering program covers a wide breath of topics, such as software development, analog and digital circuits, microprocessors, signal processing, telecommunications, and instrumentation and controls. It is also a co-operative education program that included six separate four month work terms in the industry.&lt;/dd&gt;
 &lt;/dl&gt;
 
 &lt;hr /&gt;
@@ -204,21 +180,15 @@ month work terms in the industry.&lt;/dd&gt;
 &lt;dd&gt;Publications Chair &amp;ndash; 22nd Canadian Conference on Electrical and Computer Engineering (CCECE09)
 
 &lt;ul&gt;
-&lt;li&gt;Verified that all the papers were formatted correctly for publication, and
-worked with the authors to fix any issues.&lt;/li&gt;
+&lt;li&gt;Verified that all the papers were formatted correctly for publication, and worked with the authors to fix any issues.&lt;/li&gt;
 &lt;li&gt;Compiled the papers for both the print and electronic proceedings.&lt;/li&gt;
-&lt;li&gt;Sourced USB keys for electronic proceedings and did the logo design to be
-printed on the keys.&lt;/li&gt;
-&lt;li&gt;Designed and implemented a web-based layout for the electronic proceedings
-on USB key.&lt;/li&gt;
+&lt;li&gt;Sourced USB keys for electronic proceedings and did the logo design to be printed on the keys.&lt;/li&gt;
+&lt;li&gt;Designed and implemented a web-based layout for the electronic proceedings on USB key.&lt;/li&gt;
 &lt;li&gt;Submitted the papers to be included in IEEE Xplore.&lt;/li&gt;
 &lt;/ul&gt;&lt;/dd&gt;
 &lt;dd&gt;Publications Committee Member &amp;ndash; 17th International Engineering Management Conference (IEMC2005)&lt;/dd&gt;
 &lt;dt&gt;St. John&amp;rsquo;s Linux Users Group&lt;/dt&gt;
-&lt;dd&gt;
-Was a key organizer and very active member of the group from 1998 to 2006.
-This involved both giving regular seminars and organizing a moderately sized
-group.&lt;/dd&gt;
+&lt;dd&gt;Was a key organizer and very active member of the group from 1998 to 2006. This involved both giving regular seminars and organizing a moderately sized group.&lt;/dd&gt;
 &lt;/dl&gt;
 
 &lt;hr /&gt;
@@ -239,15 +209,9 @@ group.&lt;/dd&gt;
       <guid>http://geoffholden.com/index.html</guid>
       <description>&lt;p&gt;Hi, I&amp;rsquo;m Geoff Holden and you&amp;rsquo;ve found my little corner of the Internet.&lt;/p&gt;
 
-&lt;p&gt;I&amp;rsquo;m a software developer by trade, with experience in system administration and
-a little bit of web design. You can find more information about my professional
-life via my &lt;a href=&#34;resume/&#34;&gt;r&amp;eacute;sum&amp;eacute;&lt;/a&gt; or on
-&lt;a href=&#34;http://ca.linkedin.com/in/geoffholden/&#34;&gt;LinkedIn&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m a software developer by trade, with experience in system administration and a little bit of web design. You can find more information about my professional life via my &lt;a href=&#34;resume/&#34;&gt;r&amp;eacute;sum&amp;eacute;&lt;/a&gt; or on &lt;a href=&#34;http://ca.linkedin.com/in/geoffholden/&#34;&gt;LinkedIn&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;By night, I&amp;rsquo;m an amateur photographer, focusing mostly on landscapes around
-Newfoundland (and elsewhere when I have the opportunity to travel). My
-photography can be seen on &lt;a href=&#34;http://gkhphoto.com/&#34;&gt;GKH Photography&lt;/a&gt; or on
-&lt;a href=&#34;http://500px.com/geoffholden&#34;&gt;500px&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;By night, I&amp;rsquo;m an amateur photographer, focusing mostly on landscapes around Newfoundland (and elsewhere when I have the opportunity to travel). My photography can be seen on &lt;a href=&#34;http://gkhphoto.com/&#34;&gt;GKH Photography&lt;/a&gt; or on &lt;a href=&#34;http://500px.com/geoffholden&#34;&gt;500px&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
