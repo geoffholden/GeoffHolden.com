@@ -52,26 +52,11 @@
     right: 80px;
     position: absolute; }
 
-  ul li {
+  #skills + ul li {
     width: 33%;
     float: left; }
 
-  dl ul li {
-    width: auto;
-    float: none; }
-
-  ul dl {
-    margin: 0;
-    padding: 0.3em 0 0; }
-    ul dl dt {
-      font-size: 122%;
-      font-weight: normal;
-      margin: 0 0 .75em; }
-    ul dl dd {
-      padding: 0 2em 0 0; }
-
   .resume > ul li p {
-    font-size: 122%;
     font-weight: normal;
     margin: 0 0 .75em; }
 
@@ -90,30 +75,21 @@
   ol li:nth-child(1), ol li:nth-child(2), ol li:nth-child(3) {
     border-top: none; }
 
-  h3 + dl {
-    margin-left: 0; }
+  .resume > ul li {
+    page-break-inside: avoid !important; }
 
-  dl {
-    margin: .7em 0 0 155px;
-    display: block;
-    width: 79%;
-    float: left; }
-    dl dt {
-      page-break-inside: avoid !important;
-      page-break-after: avoid !important; }
-    dl dd {
-      page-break-inside: avoid !important; }
-    dl dt + dd {
-      page-break-before: avoid !important; }
-    dl strong {
-      float: right;
-      margin-top: -2.5em;
-      text-align: right; }
-    dl em {
-      font-size: 130%;
-      font-style: normal; }
-    dl ul {
-      display: block; }
+  .resume > ul ul li {
+    page-break-inside: auto !important; }
+
+  ul li p strong {
+    float: right;
+    margin-top: -2.5em;
+    text-align: right; }
+  ul li p em {
+    font-size: 130%;
+    font-style: normal; }
+  ul li p ul {
+    display: block; }
 
   #footer + p {
     display: none; }
