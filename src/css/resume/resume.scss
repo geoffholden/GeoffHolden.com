@@ -13,8 +13,28 @@ body {
     font-family: 'Cardo', 'Times New Roman', 'Times', serif;
     color: #444;
 }
-h1, h2, h3, h4, .resume > ul li p {
+h1, h2, h3, h4 {
     font-family: "Open Sans", sans-serif;
+}
+h4 {
+    font-size: 150%;
+    font-weight: normal;
+    margin-top: 0.25em;
+    margin-bottom: 0.5em;
+}
+
+.resume > ul li h4 + p {
+    padding-right: 2em;
+    line-height: 1.5em;
+}
+
+.resume > ul li p:first-child {
+    font-size: 175%;
+    margin-bottom: 0;
+}
+
+.resume > ul ul li p:first-child {
+    font-size: 100%;
 }
 
 .container {
@@ -118,22 +138,7 @@ ul li {
     padding: 0;
 }
 
-ul dl {
-    margin: .3em 0 0;
-    padding: 0;
-    width: 100%;
-    dt {
-        font-size: 100%;
-    }
-    dd {
-        margin: 0 0 1em;
-        padding: 0 2em 0 0;
-        font-size: .8em;
-        line-height: 1.5em;
-    }
-}
-
-dl ul, #publications + ul {
+ul ul, #publications + ul {
     list-style: square outside none;
     li {
         margin-left: 2em;
@@ -174,22 +179,17 @@ ol li:nth-child(1) {
     border-top: none;
 }
 
-dl {
-    display: inline-block;
-    width: 78%;
-    margin: 0;
-    padding: 0;
-    dt {
-        margin: 0;
-        padding: 0;
-        font-size: 140%;
-    }
-    dd {
-        margin: 0 0 1.5em;
-        padding: 0;
-        font-size: 80%;
-        line-height: 1.4em;
-    }
+ul li {
+    font-size: 80%;
+}
+
+ul ul li {
+    font-size: 100%;
+}
+
+ul li p {
+    line-height: 1.4em;
+
     strong {
         display: block;
         white-space: nowrap;
@@ -198,9 +198,8 @@ dl {
         display: block;
         font-size: 110%;
         margin: .15em 0 .5em;
-        font-style: bold;
+        font-style: normal;
     }
-    
 }
 
 
