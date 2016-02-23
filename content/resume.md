@@ -62,7 +62,7 @@ I'm a software developer with 10+ years of experience designing and writing code
 -	[SEAformatics Group,<br /> Memorial University of Newfoundland](http://seaformatics.ca)
 
 	*Research and Project Engineer* **St. John's, NL  
-	2010-Present**
+	2010-2016**
 
 	-	Design and development of a power-efficient stack of microcontrollers to perform data acquisition, communications, and battery charging in a subsea environment.
 	-	Development of a web-based data visualization application in Ruby on Rails.
