@@ -98,7 +98,7 @@
         width: 78%;
     }
     
-    #skills + ul li {
+    h3[id^="skills"] + ul li {
         width: 33%;
         float: left;
     }

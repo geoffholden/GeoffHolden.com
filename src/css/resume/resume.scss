@@ -51,7 +51,7 @@ h4 {
     padding: 10px 20px;
 }
 
-blockquote a, #footer + p a {
+blockquote a, h3[id^="footer"] + p a {
     color: #990003;
 }
 
@@ -138,23 +138,23 @@ ul li {
     padding: 0;
 }
 
-ul ul, #publications + ul {
+ul ul, h3[id^="publications"] + ul {
     list-style: square outside none;
     li {
         margin-left: 2em;
     }
 }
 
-h3#publications+ul {
+h3[id^="publications"] + ul {
     padding-top: 0.7em;
 }
 
-#publications + ul li {
+h3[id^="publications"] + ul li {
     width: auto;
     float: none;
     font-size: 80%;
 }
-#publications + ul li + li {
+h3[id^="publications"] + ul li + li {
     margin-top: 0.25em;
 }
 
@@ -202,12 +202,11 @@ ul li p {
     }
 }
 
-
-#footer {
+h3[id^="footer"] {
     display: none;
 }
 
-#footer + p {
+h3[id^="footer"] + p {
     width: 100%;
     font-size: 11px;
     text-align: center;

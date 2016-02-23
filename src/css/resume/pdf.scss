@@ -60,7 +60,7 @@
         position: absolute;
     }
 
-    #skills + ul li {
+    h3[id^="skills"] + ul li {
         width: 33%;
         float: left;
     }
@@ -110,11 +110,11 @@
         }
     }
 
-    #footer + p {
+    h3[id^="footer"] + p {
         display: none;
     }
 
-    #footer + p + hr {
+    h3[id^="footer"] + p + hr {
         display: none;
     }
 }
