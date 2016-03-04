@@ -17,9 +17,9 @@
       <guid>http://geoffholden.com/resume/</guid>
       <description>
 
-&lt;h1 id=&#34;toc_0&#34;&gt;Geoff Holden&lt;/h1&gt;
+&lt;h1 id=&#34;toc_0:c59a67a3c7bc5faa453847420267045e&#34;&gt;Geoff Holden&lt;/h1&gt;
 
-&lt;h2 id=&#34;toc_1&#34;&gt;Full Stack Software Developer&lt;/h2&gt;
+&lt;h2 id=&#34;toc_1:c59a67a3c7bc5faa453847420267045e&#34;&gt;Full Stack Software Developer&lt;/h2&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;&lt;a href=&#34;resume.pdf&#34;&gt;Download PDF&lt;/a&gt;&lt;br /&gt;
@@ -30,31 +30,31 @@ St. John&amp;rsquo;s, NL, Canada&lt;br /&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&#34;summary&#34;&gt;Summary&lt;/h3&gt;
+&lt;h3 id=&#34;summary:c59a67a3c7bc5faa453847420267045e&#34;&gt;Summary&lt;/h3&gt;
 
 &lt;p&gt;I&amp;rsquo;m a software developer with 10+ years of experience designing and writing code covering large scale object oriented designs all the way down to to tiny microcontrollers.&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&#34;skills&#34;&gt;Skills&lt;/h3&gt;
+&lt;h3 id=&#34;skills:c59a67a3c7bc5faa453847420267045e&#34;&gt;Skills&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;h4 id=&#34;toc_4&#34;&gt;Development&lt;/h4&gt;
+&lt;li&gt;&lt;h4 id=&#34;toc_4:c59a67a3c7bc5faa453847420267045e&#34;&gt;Development&lt;/h4&gt;
 
 &lt;p&gt;I design and develop software for platforms of all sizes, including microcontrollers, embedded Linux, mobile devices, desktop computers, and distributed systems.&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;h4 id=&#34;toc_5&#34;&gt;Operations&lt;/h4&gt;
+&lt;li&gt;&lt;h4 id=&#34;toc_5:c59a67a3c7bc5faa453847420267045e&#34;&gt;Operations&lt;/h4&gt;
 
 &lt;p&gt;My background in system administration and operations gives me valuable perspectives on designing for deployment, configuration management and scalability.&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;h4 id=&#34;toc_6&#34;&gt;Problem Solving&lt;/h4&gt;
+&lt;li&gt;&lt;h4 id=&#34;toc_6:c59a67a3c7bc5faa453847420267045e&#34;&gt;Problem Solving&lt;/h4&gt;
 
 &lt;p&gt;My natural tendency for problem solving and debugging assists with tracking down and rectifying issues in codebases and environments alike.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&#34;technical&#34;&gt;Technical&lt;/h3&gt;
+&lt;h3 id=&#34;technical:c59a67a3c7bc5faa453847420267045e&#34;&gt;Technical&lt;/h3&gt;
 
 &lt;ol&gt;
 &lt;li&gt;C / C++&lt;/li&gt;
@@ -73,7 +73,7 @@ St. John&amp;rsquo;s, NL, Canada&lt;br /&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&#34;experience&#34;&gt;Experience&lt;/h3&gt;
+&lt;h3 id=&#34;experience:c59a67a3c7bc5faa453847420267045e&#34;&gt;Experience&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://seaformatics.ca&#34;&gt;SEAformatics Group,&lt;br /&gt; Memorial University of Newfoundland&lt;/a&gt;&lt;/p&gt;
@@ -132,7 +132,7 @@ St. John&amp;rsquo;s, NL, Canada&lt;br /&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&#34;education&#34;&gt;Education&lt;/h3&gt;
+&lt;h3 id=&#34;education:c59a67a3c7bc5faa453847420267045e&#34;&gt;Education&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Bachelor of Engineering in Computer Engineering&lt;/p&gt;
@@ -145,7 +145,7 @@ St. John&amp;rsquo;s, NL, Canada&lt;br /&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&#34;publications&#34;&gt;Publications&lt;/h3&gt;
+&lt;h3 id=&#34;publications:c59a67a3c7bc5faa453847420267045e&#34;&gt;Publications&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Cook, A., Masek, V., Press, A., &lt;strong&gt;Holden, G.&lt;/strong&gt;, Boyd, R. &amp;ldquo;The Seaformatics Technology Demonstration Project&amp;rdquo;, &lt;em&gt;OCEANS &amp;lsquo;14 MTS/IEEE&lt;/em&gt;&lt;/li&gt;
@@ -154,7 +154,7 @@ St. John&amp;rsquo;s, NL, Canada&lt;br /&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&#34;volunteer&#34;&gt;Volunteer&lt;/h3&gt;
+&lt;h3 id=&#34;volunteer:c59a67a3c7bc5faa453847420267045e&#34;&gt;Volunteer&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;IEEE&lt;/p&gt;
@@ -163,7 +163,8 @@ St. John&amp;rsquo;s, NL, Canada&lt;br /&gt;
 &lt;li&gt;&lt;p&gt;IEEE Newfoundland and Labrador Section&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Currently membership development chair&lt;/li&gt;
+&lt;li&gt;Currently secretary&lt;/li&gt;
+&lt;li&gt;Served as membership development chair from 2014-2015&lt;/li&gt;
 &lt;li&gt;Served as treasurer from 2010-2013&lt;/li&gt;
 &lt;li&gt;Served as webmaster from 2008-2009&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
@@ -190,7 +191,7 @@ St. John&amp;rsquo;s, NL, Canada&lt;br /&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&#34;footer&#34;&gt;Footer&lt;/h3&gt;
+&lt;h3 id=&#34;footer:c59a67a3c7bc5faa453847420267045e&#34;&gt;Footer&lt;/h3&gt;
 
 &lt;p&gt;Geoff Holden &amp;ndash; &lt;a href=&#34;mailto:geoff@geoffholden.com&#34;&gt;geoff@geoffholden.com&lt;/a&gt; &amp;ndash; (709) 727-0379&lt;/p&gt;
 
