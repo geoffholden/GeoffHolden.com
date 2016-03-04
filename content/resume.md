@@ -130,7 +130,8 @@ I'm a software developer with 10+ years of experience designing and writing code
 
 	-	IEEE Newfoundland and Labrador Section
 
-		-	Currently membership development chair
+		-	Currently secretary
+		-	Served as membership development chair from 2014-2015
 		-	Served as treasurer from 2010-2013
 		-	Served as webmaster from 2008-2009
 
