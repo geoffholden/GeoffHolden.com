@@ -6,8 +6,6 @@ url = "/index.html"
 
 +++
 
-Hi, I'm Geoff Holden and you've found my little corner of the Internet.
+I'm Geoff Holden, a software developer living in St. John's, Newfoundland. You can find out more about my professional life via my [r&eacute;sum&eacute;](/resume/), or perhaps on [LinkedIn](http://ca.linkedin.com/in/geoffholden/).
 
-I'm a software developer by trade, with experience in system administration and a little bit of web design. You can find more information about my professional life via my [r&eacute;sum&eacute;](resume/) or on [LinkedIn](http://ca.linkedin.com/in/geoffholden/).
-
-By night, I'm an amateur photographer, focusing mostly on landscapes around Newfoundland (and elsewhere when I have the opportunity to travel). My photography can be seen on [GKH Photography](http://gkhphoto.com/) or on [500px](http://500px.com/geoffholden).
+I'm not really sure what content will be here yet. I suspect it'll be a mix of thoughts on software development along with me trying to take control of my own health.

@@ -91,7 +91,7 @@ I'm a software developer with 10+ years of experience designing and writing code
 	-	Automation of tasks through the development of scripts and administration tools.
 	-	Configuration of system and network parameters.
 	-	Monitoring of system stability and performance.
-	-	Ensuring 24x7 operation of cluster.
+	-	Ensuring 24×7 operation of cluster.
 	-	Comprehensive documentation of procedures.
 
 -	[Verafin Inc.](http://verafin.com)

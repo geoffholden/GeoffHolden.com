@@ -1,74 +1,27 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-   <title>Geoff Holden</title>
-   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-   <meta name="viewport" content="width=device-width; initial-scale=1.0;" />
-   <link href="reset.css" rel="stylesheet" type="text/css" />
-   <link href="http://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet" type="text/css" />
-   <link href="http://fonts.googleapis.com/css?family=Reenie+Beanie" rel="stylesheet" type="text/css" />
-   <link href="style.css" rel="stylesheet" type="text/css" />
-   {{ "<!--[if lt IE 9]>" | safeHTML }}
-      <link rel="stylesheet" type="text/css" href="style_ie.css" />
-   {{ "<![endif]-->" | safeHTML }}
-   {{ "<!--[if IE 9]>" | safeHTML }}
-      <link rel="stylesheet" type="text/css" href="style_ie9.css" />
-   {{ "<![endif]-->" | safeHTML }}
-   <script type="text/javascript">
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-230660-1']);
-      _gaq.push(['_trackPageview']);
-      (function() {
-         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-</script>
-</head>
-<body onload="setTimeout(function() {window.scrollTo(0,0) }, 100);">
-   <div id="page">
-      <div id="header_wrap">
-         <div id="header">
-            <h1>Geoff Holden</h1>
-         </div>
-      </div>
-      <div id="content_wrap">
-         <div id="content">
-            <ul class="links">
-               <li><a href="resume/" rel="me">R&eacute;sum&eacute;</a></li>
-               <li><a href="http://gkhphoto.com/" rel="me">Photography</a></li>
-            </ul>
+{{ partial "header" . }}
+<div class="container clearfix">
+    <main role="main" class="content">
+        {{ $paginator := .Paginate (where .Site.Pages "Type" "post") }}
+        {{ if eq $paginator.PageNumber 1 }}
+            <article class="post">
+                {{ range .Data.Pages }}
+                    {{if eq .RelPermalink "/index.html" }}
+                            {{ .Content}}
+                    {{ end }}
+                {{ end }}
+            </article>
+        {{ end }}
 
-            <br style="clear: left;" />
+        {{ range $paginator.Pages }}
+            {{ .Render "summary" }}
+        {{ end }}
 
-            <div id="photo">
-               <div id="polaroid">
-                  <span class="caption"><a href="http://gkhphoto.com/" rel="me">GKH Photography</a></span>
-               </div>
-            </div>
+        {{ if gt $paginator.TotalPages 0 }}
+            {{ partial "pagination" . }}
+        {{ end }}
+    </main>
 
-{{ range .Data.Pages }}
-    {{if eq .RelPermalink "/index.html" }} {{.Content}} {{end}}
-{{ end }}
+    {{ partial "author" . }}
+</div>
 
-         </div>
-         <div id="margin">
-            <div id="hello"><a href="mailto:geoff@geoffholden.com" title="geoff@geoffholden.com">Hello?</a></div>
-            <br />
-            Connect
-            <ul>
-               <li><a href="http://gplus.to/gholden/" title="Google+: Geoff Holden" rel="me"><img src="GooglePlus.png" alt="Google+: Geoff Holden" />Google+</a></li>
-               <li><a href="http://www.twitter.com/gholden/" title="Twitter: gholden" rel="me"><img src="Twitter.png" alt="Twitter: gholden" />Twitter</a></li>
-               <li><a href="http://www.flickr.com/photos/geoffholden/" title="Flickr: Geoff Holden" rel="me"><img src="Flickr.png" alt="Flickr: Geoff Holden" />Flickr</a></li>
-               <li><a href="http://500px.com/geoffholden" title="500px: Geoff Holden" rel="me"><img src="500px.png" alt="500px: Geoff Holden" />500px</a></li>
-               <li><a href="http://www.last.fm/user/cnslcwby/" title="last.fm: cnslcwby" rel="me"><img src="LastFM.png" alt="last.fm: cnslcwby" />Last.fm</a></li>
-               <li><a href="http://ca.linkedin.com/in/geoffholden/" title="LinkedIn: Geoff Holden" rel="me"><img src="LinkedIn.png" alt="LinkedIn: Geoff Holden" />LinkedIn</a></li>
-               <li><a href="http://delicious.com/cnslcwby/" title="del.icio.us: cnslcwby" rel="me"><img src="Delicious.png" alt="del.icio.us: cnslcwby" />del.icio.us</a></li>
-               <li><a href="mailto:geoff@geoffholden.com" title="Email: geoff@geoffholden.com"><img src="Contact.png" alt="Email: geoff@geoffholden.com" />Email</a></li>
-            </ul>
-         </div>
-         <div style="clear: both;"></div>
-      </div>
-   </div>
-</body>
-</html>
+{{ partial "footer" . }}

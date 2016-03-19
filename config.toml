@@ -2,9 +2,47 @@ baseurl = "http://geoffholden.com/"
 languageCode = "en-us"
 title = "Geoff Holden"
 
-[blackfriday]
-  extensions = ["definitionLists","headerIds"]
-  extensionsmask = ["autoHeaderIds"]
-  plainIdAnchors = true
+# Define how many pages appear per site
+paginate = 10
+# Enable comments powered by Disqus by entering your disqus shortname
+# disqusShortname = "spf13"
+theme = "hugo-theme"
 
+
+[permalinks]
+    post = "/:year/:month/:filename/"
+
+[blackfriday]
+    extensions = ["definitionLists","headerIds"]
+    extensionsmask = ["autoHeaderIds"]
+    plainIdAnchors = true
+
+[params]
+    site_author = "Geoff Holden"
+    site_description = "The personall blog of Geoff Holden"
+    location = "Newfoundland, Canada"
+    # All paths are relative to the baseurl. Put your files
+    # somewhere in the static folder.
+    avatar = "img/profile.jpg"
+    header_background = "img/desk.jpg"
+    header_title = "Ponderings of a Programmer"
+    copyright = "Geoff Holden"
+
+    # Enable gogle analytics by entering your tracking code
+    google_analytics = "UA-230660-1"
+
+    disclaimer = "This is my personal blog any views expressed here are mine alone and not those of my employer or anybody else you might pin them on."
+
+[social]
+    # Add your social network accounts to the profile section on the left
+    # by entering your username. The links to your account will be
+    # create automatically.
+    twitter   = "gholden"
+    facebook  = ""
+    linkedin  = "geoffholden"
+    behance   = ""
+    dribbble  = ""
+    instagram = ""
+    github    = "geoffholden"
+    gplus     = ""
 
