@@ -39,5 +39,5 @@ deploy: static
 	cd public; \
 	git add -A; \
 	git commit -m "rebuilding site $$(date)";\
-	git push
+	git push origin HEAD:gh-pages
 
