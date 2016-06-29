@@ -59,6 +59,13 @@ I'm a software developer with 10+ years of experience designing and writing code
 
 ### Experience {#experience}
 
+-	[Canadian Operational Network of Coupled Environmental Prediction Systems (CONCEPTS),<br />Fisheries and Oceans Canada](http://www.dfo-mpo.gc.ca)
+
+	*Physical Scientist* **St. John's, NL  
+	2016**
+
+	-	Design and implementation of a web-based data visualization tool to process terabytes of model output and produce custom plots in real time.
+
 -	[SEAformatics Group,<br /> Memorial University of Newfoundland](http://seaformatics.ca)
 
 	*Research and Project Engineer* **St. John's, NL  
