@@ -62,7 +62,7 @@ I'm a software developer with 10+ years of experience designing and writing code
 -	[Canadian Operational Network of Coupled Environmental Prediction Systems (CONCEPTS),<br />Fisheries and Oceans Canada](http://www.dfo-mpo.gc.ca)
 
 	*Physical Scientist* **St. John's, NL  
-	2016**
+	2016-present**
 
 	-	Design and implementation of a web-based data visualization tool to process terabytes of model output and produce custom plots in real time.
 
