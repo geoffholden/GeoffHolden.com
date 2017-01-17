@@ -1,6 +1,7 @@
 scss := $(wildcard src/css/**/*.scss)
 css  := $(patsubst src/%,static/%,$(scss:scss=css))
 
+.PHONY: css hugo
 static: css hugo public/resume/resume.pdf
 
 css: $(css)
@@ -11,7 +12,7 @@ static/%.css: src/%.scss
 hugo:
 	@hugo
 
-public/resume/resume.pdf: $(css) public/resume/index.html
+public/resume/resume.pdf: $(css) content/resume.md
 	wkhtmltopdf \
 		-s Letter \
 		--print-media-type \
