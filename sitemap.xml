@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://geoffholden.com/2017/01/beginning_woodturning/</loc>
+    <lastmod>2017-01-16T13:49:45-03:30</lastmod>
+  </url>
+  
+  <url>
     <loc>http://geoffholden.com/2016/03/becoming_a_tea_drinker/</loc>
     <lastmod>2016-03-31T11:38:28-02:30</lastmod>
   </url>
@@ -18,13 +23,13 @@
   
   <url>
     <loc>http://geoffholden.com/</loc>
-    <lastmod>2016-03-31T11:38:28-02:30</lastmod>
+    <lastmod>2017-01-16T13:49:45-03:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://geoffholden.com/post/</loc>
-    <lastmod>2016-03-31T11:38:28-02:30</lastmod>
+    <lastmod>2017-01-16T13:49:45-03:30</lastmod>
     <priority>0</priority>
   </url>
   
