@@ -59,10 +59,18 @@ I'm a software developer with 10+ years of experience designing and writing code
 
 ### Experience {#experience}
 
+-	[Seaformatics Systems Inc.](http://www.seaformatics.ca)
+
+	*Co-Founder* **St. John's, NL  
+	2016-present**
+
+	-	Software development on embedded.
+	-	Circuit and PCB design and fabrication.
+
 -	[Canadian Operational Network of Coupled Environmental Prediction Systems (CONCEPTS),<br />Fisheries and Oceans Canada](http://www.dfo-mpo.gc.ca)
 
 	*Physical Scientist* **St. John's, NL  
-	2016-present**
+	2016-2017**
 
 	-	Design and implementation of a web-based data visualization tool to process terabytes of model output and produce custom plots in real time.
 
@@ -153,10 +161,6 @@ I'm a software developer with 10+ years of experience designing and writing code
 		-	Submitted the papers to be included in IEEE Xplore.
 
 	-	Publications Committee Member -- 17th International Engineering Management Conference (IEMC2005)
-
--	St. John's Linux Users Group
-
-	Was a key organizer and very active member of the group from 1998 to 2006. This involved both giving regular seminars and organizing a moderately sized group.
 
 ---
 
