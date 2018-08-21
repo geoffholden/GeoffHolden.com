@@ -1,7 +1,7 @@
 {{ partial "header" . }}
 <div class="container clearfix">
     <main role="main" class="content">
-        {{ $paginator := .Paginate (where .Site.Pages "Type" "post") }}
+        {{ $paginator := .Paginate (where .Site.RegularPages "Type" "post") }}
         {{ if eq $paginator.PageNumber 1 }}
             <article class="post">
                 {{ range .Data.Pages }}
