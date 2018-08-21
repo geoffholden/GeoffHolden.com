@@ -2,7 +2,7 @@
 date = "2015-09-11T13:35:05-02:30"
 draft = false
 title = "index"
-url = "/index.html"
+url = "/"
 
 +++
 
