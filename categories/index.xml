@@ -6,9 +6,9 @@
     <description>Recent content in Categories on Geoff Holden</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    
-	<atom:link href="https://geoffholden.com/categories/index.xml" rel="self" type="application/rss+xml" />
-    
+    <copyright>Geoff Holden</copyright>
+    <atom:link href="/categories/" rel="self" type="application/rss+xml" />
     
   </channel>
 </rss>
+
