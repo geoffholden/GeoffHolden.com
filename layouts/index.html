@@ -5,7 +5,7 @@
         {{ if eq $paginator.PageNumber 1 }}
             <article class="post">
                 {{ range .Data.Pages }}
-                    {{if eq .RelPermalink "/index.html" }}
+                    {{if eq .RelPermalink "/" }}
                             {{ .Content}}
                     {{ end }}
                 {{ end }}
