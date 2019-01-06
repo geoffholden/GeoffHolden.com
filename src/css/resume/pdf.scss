@@ -1,6 +1,12 @@
 @media print {
+    @page {
+        margin: 0;
+        size: 8.5in 10in;
+    }
+
     body {
         color: black;
+        margin: 0 0.5in 0 0.5in;
     }
 
     a {

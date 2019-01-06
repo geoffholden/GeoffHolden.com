@@ -1,6 +1,8 @@
 scss := $(wildcard src/css/**/*.scss)
 css  := $(patsubst src/%,static/%,$(scss:scss=css))
 
+CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+
 .PHONY: css hugo
 static: css hugo public/resume/resume.pdf
 
@@ -13,7 +15,8 @@ hugo:
 	@hugo
 
 public/resume/resume.pdf: $(css) content/resume.md
-	wkhtmltopdf \
+	$(CHROME) public/resume/index.html
+	echo wkhtmltopdf \
 		-s Letter \
 		--print-media-type \
 		--footer-center "[title]" \

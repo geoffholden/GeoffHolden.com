@@ -20,7 +20,7 @@ Full Stack Software Developer
 
 ### Summary {#summary}
 
-I'm a software developer with 10+ years of experience designing and writing code covering large scale object oriented designs all the way down to to tiny microcontrollers.
+I'm a software developer with 15+ years of experience designing and writing code covering large scale object oriented designs all the way down to to tiny microcontrollers.
 
 ---
 
@@ -64,7 +64,7 @@ I'm a software developer with 10+ years of experience designing and writing code
 	*Co-Founder* **St. John's, NL  
 	2016-present**
 
-	-	Software development on embedded.
+	-	Software development on embedded platforms.
 	-	Circuit and PCB design and fabrication.
 
 -	[Canadian Operational Network of Coupled Environmental Prediction Systems (CONCEPTS),<br />Fisheries and Oceans Canada](http://www.dfo-mpo.gc.ca)
@@ -72,7 +72,7 @@ I'm a software developer with 10+ years of experience designing and writing code
 	*Physical Scientist* **St. John's, NL  
 	2016-2017**
 
-	-	Design and implementation of a web-based data visualization tool to process terabytes of model output and produce custom plots in real time.
+	-	Design and implementation of a web-based data visualization tool to process terabytes of model output and produce custom plots in real time. This involved writing a backend system in Python that leveraged NetCDF data files, as well as a JavaScript frontend using ReactJS.
 
 -	[SEAformatics Group,<br /> Memorial University of Newfoundland](http://seaformatics.ca)
 
@@ -145,10 +145,8 @@ I'm a software developer with 10+ years of experience designing and writing code
 
 	-	IEEE Newfoundland and Labrador Section
 
-		-	Currently secretary
-		-	Served as membership development chair from 2014-2015
-		-	Served as treasurer from 2010-2013
-		-	Served as webmaster from 2008-2009
+		-	Currently serving as treasurer
+		-	Have served in a number of roles from 2008-2019, including treasurer, secretary, membership development chair, and webmaster.
 
 	-	Treasurer -- 14th Canadian Workshop on Information Theory (CWIT 2015)
 
