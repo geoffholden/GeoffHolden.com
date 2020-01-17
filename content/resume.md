@@ -45,15 +45,16 @@ I'm a software developer with 15+ years of experience designing and writing code
 1.	C / C++
 2.	Java
 3.	Ruby (on Rails)
-4.	Go
-5.	XHTML
-6.	CSS
-7.	JavaScript
-8.	Git / CVS / Subversion
-9.	SQL / MySQL
-10.	Microcontrollers
-11.	Linux
-12.	Android
+4.	Python
+5.	Go
+6.	XHTML
+7.	CSS
+8.	JavaScript
+9.	Git / CVS / Subversion
+10.	SQL / MySQL
+11.	Microcontrollers
+12.	Linux
+13.	Android
 
 ---
 
@@ -61,7 +62,7 @@ I'm a software developer with 15+ years of experience designing and writing code
 
 -	[Seaformatics Systems Inc.](http://www.seaformatics.ca)
 
-	*Co-Founder* **St. John's, NL  
+	*Co-Founder / Director of R&D* **St. John's, NL  
 	2016-present**
 
 	-	Software development on embedded platforms.
@@ -145,8 +146,7 @@ I'm a software developer with 15+ years of experience designing and writing code
 
 	-	IEEE Newfoundland and Labrador Section
 
-		-	Currently serving as treasurer
-		-	Have served in a number of roles from 2008-2019, including treasurer, secretary, membership development chair, and webmaster.
+		-	Served in a number of roles from 2008-2019, including treasurer, secretary, membership development chair, and webmaster.
 
 	-	Treasurer -- 14th Canadian Workshop on Information Theory (CWIT 2015)
 
