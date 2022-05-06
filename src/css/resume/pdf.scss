@@ -1,12 +1,12 @@
 @media print {
     @page {
         margin: 0;
-        size: 8.5in 10in;
+        size: 8.5in 11in;
     }
 
     body {
         color: black;
-        margin: 0 0.5in 0 0.5in;
+        margin: 0.5in 0.5in 0.5in 0.5in;
     }
 
     a {
@@ -14,9 +14,12 @@
         color: black !important;
     }
 
-    a[href^='http://']:after,a[href^='https://'] {
+    /*
+    a[href^='http://']:after,a[href^='https://']:after {
         content: " (" attr(href) ") ";
+        display: inline-block;
     }
+    */
 
     .container {
         width: 1000px;

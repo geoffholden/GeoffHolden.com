@@ -138,6 +138,10 @@ ul li {
     padding: 0;
 }
 
+h3[id^=experience] + ul > li + li {
+    margin-top: 2em;
+}
+
 ul ul, h3[id^="publications"] + ul {
     list-style: square outside none;
     li {

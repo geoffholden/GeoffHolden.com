@@ -8,7 +8,7 @@ type = "resume"
 Geoff Holden
 ============
 
-Full Stack Software Developer
+Full Stack Software and Electronics Developer
 -----------------------------
 
 > [Download PDF](resume.pdf)  
@@ -43,32 +43,35 @@ I'm a software developer with 15+ years of experience designing and writing code
 ### Technical {#technical}
 
 1.	C / C++
-2.	Java
+2.	Java / Kotlin
 3.	Ruby (on Rails)
 4.	Python
 5.	Go
-6.	XHTML
-7.	CSS
-8.	JavaScript
-9.	Git / CVS / Subversion
-10.	SQL / MySQL
-11.	Microcontrollers
-12.	Linux
-13.	Android
+6.  React
+7.  Flutter
+8.	XHTML
+9.	CSS
+10.	JavaScript / TypeScript
+11.	Git / CVS / Subversion
+12.	SQL / MySQL
+13.	Microcontrollers
+14.	Linux
+15.	Android
 
 ---
 
 ### Experience {#experience}
 
--	[Seaformatics Systems Inc.](http://www.seaformatics.ca)
+-	[Seaformatics Systems Inc.](http://www.seaformatics.ca) / [WaterLily](https://waterlilyturbine.com/)
 
 	*Co-Founder / Director of R&D* **St. John's, NL  
 	2016-present**
 
 	-	Software development on embedded platforms.
 	-	Circuit and PCB design and fabrication.
+    -	Management and customization of Shopify theme
 
--	[Canadian Operational Network of Coupled Environmental Prediction Systems (CONCEPTS),<br />Fisheries and Oceans Canada](http://www.dfo-mpo.gc.ca)
+-	[Canadian Operational Network of Coupled Environmental Prediction Systems (CONCEPTS), Fisheries and Oceans Canada](http://www.dfo-mpo.gc.ca)
 
 	*Physical Scientist* **St. John's, NL  
 	2016-2017**
@@ -119,6 +122,17 @@ I'm a software developer with 15+ years of experience designing and writing code
 	-	Researching and implementing new technology.
 	-	Responsible for the architecture and design of the technical environments (servers, storage, database, middleware, software, network and desktop) for the various developed and integrated applications.
 	-	Responsible for the management of the network, servers, and workstations.
+
+---
+
+### Personal Projects {#personal}
+
+-	Android Apps
+
+    Developed and launched two apps on Google's Play store
+
+    -	[Food Diary](https://play.google.com/store/apps/details?id=com.geoffholden.android.fooddiary) --  a food tracking app with a 4.2 star rating and over 10,000 installs.
+	-	[Two Do](https://play.google.com/store/apps/details?id=com.geoffholden.two_do) -- a different take on a To Do app, recently launched.
 
 ---
 

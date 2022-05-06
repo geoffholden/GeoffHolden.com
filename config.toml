@@ -8,6 +8,7 @@ paginate = 10
 # disqusShortname = "spf13"
 theme = "hugo-theme"
 
+ignoreErrors = ["error-missing-instagram-accesstoken"]
 
 [permalinks]
     post = "/:year/:month/:filename/"
