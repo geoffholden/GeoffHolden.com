@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Geoff Holden</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Posts on Geoff Holden</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 16 Jan 2017 13:49:45 -0330</lastBuildDate>
-    
-	<atom:link href="https://geoffholden.com/post/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 16 Jan 2017 13:49:45 -0330</lastBuildDate><atom:link href="https://geoffholden.com/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Beginning Woodturning</title>
       <link>https://geoffholden.com/2017/01/beginning_woodturning/</link>
