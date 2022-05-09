@@ -6,9 +6,12 @@ title = "Geoff Holden"
 paginate = 10
 # Enable comments powered by Disqus by entering your disqus shortname
 # disqusShortname = "spf13"
-theme = "hugo-theme"
+theme = "hugo-profile"
 
 ignoreErrors = ["error-missing-instagram-accesstoken"]
+
+[params.color]
+    primaryColor = "#005700"
 
 [permalinks]
     post = "/:year/:month/:filename/"
@@ -34,17 +37,55 @@ ignoreErrors = ["error-missing-instagram-accesstoken"]
 
     disclaimer = "This is my personal blog any views expressed here are mine alone and not those of my employer or anybody else you might pin them on."
 
-[social]
-    # Add your social network accounts to the profile section on the left
-    # by entering your username. The links to your account will be
-    # create automatically.
-    twitter   = "gholden"
-    facebook  = ""
-    linkedin  = "geoffholden"
-    behance   = ""
-    dribbble  = ""
-    instagram = "geoff.holden"
-    github    = "geoffholden"
-    gplus     = ""
-    keybase   = "gholden"
+    favicon = "/img/monogram.svg"
 
+    [params.hero]
+        enable = true
+        intro = "Hi, my name is"
+        title = "Geoff Holden."
+        subtitle = "I make things."
+        image = "/img/pixel.png"
+        [params.hero.button]
+            enable = true
+            name = "Resume"
+            url = "/resume/"
+
+    [[params.hero.socialLinks.fontAwesomeIcons]]
+        icon = "fab fa-github"
+        url = "https://github.com/geoffholden/"
+
+    [[params.hero.socialLinks.fontAwesomeIcons]]
+        icon = "fab fa-linkedin"
+        url = "https://linkedin.com/in/geoffholden"
+
+    # [[params.hero.socialLinks.fontAwesomeIcons]]
+    #     icon = "fas fa-blog"
+    #     url = "https://GettingThingsStarted.com/"
+
+    [params.about]
+        enable = true
+        title = "About Me"
+        image = "/img/hero.jpg"
+        content = """I am a software developer and electronics designer based out of St. John's, NL, Canada.
+
+I'm currently working with Seaformatics, where I design the electronics for the [WaterLily](https://waterlilyturbine.com/) personal turbine.
+
+        """
+
+        [params.about.skills]
+            enable = true
+            title = "Here are a few technologies that I'm proficient with:"
+            items = [ "C/C++", "Java/Kotlin", "Flutter", "React", "Python", "Go", "Ruby", "Eagle", "KiCAD" ]
+
+    [params.contact]
+        enable = true
+        content = "My inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!"
+        email = "geoff@geoffholden.com"
+        btnName = "Mail me"
+
+    [params.footer]
+        recentPosts = false
+
+        [params.footer.socialNetworks]
+            github = "https://github.com/geoffholden/"
+            linkedin = "https://linkedin.com/in/geoffholden"

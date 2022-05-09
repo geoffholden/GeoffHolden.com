@@ -2,7 +2,6 @@
 	path = public
 	url = git@github.com:geoffholden/GeoffHolden.com.git
 	branch = gh-pages
-[submodule "hugo-theme"]
-	path = themes/hugo-theme
-	url = git@github.com:geoffholden/hugo-theme.git
-	branch = master
+[submodule "themes/hugo-profile"]
+	path = themes/hugo-profile
+	url = https://github.com/gurusabarish/hugo-profile.git
