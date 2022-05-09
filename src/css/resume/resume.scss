@@ -215,3 +215,17 @@ h3[id^="footer"] + p {
     font-size: 11px;
     text-align: center;
 }
+
+@media (prefers-color-scheme: dark) {
+    body {
+        color: #bcbcbc;
+        background: black;
+    }
+    blockquote a, h3[id^="footer"] + p a {
+        color: white;
+    }
+    .container {
+        background: #0b0b0b;;
+    }
+
+}
