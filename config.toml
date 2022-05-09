@@ -13,6 +13,9 @@ ignoreErrors = ["error-missing-instagram-accesstoken"]
 [params.color]
     primaryColor = "#005700"
 
+[params.color.darkmode]
+    primaryColor = "#00a900"
+
 [permalinks]
     post = "/:year/:month/:filename/"
 
@@ -57,6 +60,14 @@ ignoreErrors = ["error-missing-instagram-accesstoken"]
     [[params.hero.socialLinks.fontAwesomeIcons]]
         icon = "fab fa-linkedin"
         url = "https://linkedin.com/in/geoffholden"
+
+    [[params.hero.socialLinks.fontAwesomeIcons]]
+        icon = "fas fa-camera"
+        url = "https://gkhphoto.com/"
+
+    [[params.hero.socialLinks.fontAwesomeIcons]]
+        icon = "fas fa-camera-retro"
+        url = "https://film.gkhphoto.com/"
 
     # [[params.hero.socialLinks.fontAwesomeIcons]]
     #     icon = "fas fa-blog"
