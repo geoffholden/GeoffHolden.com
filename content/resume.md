@@ -62,10 +62,18 @@ I'm a software developer with 15+ years of experience designing and writing code
 
 ### Experience {#experience}
 
+-	[Wave](https://waveapps.com/)
+
+	*Software Engineer* **St. John's, NL (Remote)  
+    2022-present**
+
+	-	Backend services in Python
+    -	Integrations with 3rd party vendors
+
 -	[Seaformatics Systems Inc.](http://www.seaformatics.ca) / [WaterLily](https://waterlilyturbine.com/)
 
 	*Co-Founder / Director of R&D* **St. John's, NL  
-	2016-present**
+	2016-2022**
 
 	-	Software development on embedded platforms.
 	-	Circuit and PCB design and fabrication.

@@ -26,7 +26,7 @@ ignoreErrors = ["error-missing-instagram-accesstoken"]
 
 [params]
     site_author = "Geoff Holden"
-    site_description = "The personall blog of Geoff Holden"
+    site_description = "The personal blog of Geoff Holden"
     location = "Newfoundland, Canada"
     # All paths are relative to the baseurl. Put your files
     # somewhere in the static folder.
@@ -79,7 +79,7 @@ ignoreErrors = ["error-missing-instagram-accesstoken"]
         image = "/img/hero.jpg"
         content = """I am a software developer and electronics designer based out of St. John's, NL, Canada.
 
-I'm currently working with Seaformatics, where I design the electronics for the [WaterLily](https://waterlilyturbine.com/) personal turbine.
+I'm currently working with [Wave](https://www.waveapps.com/), where I work on backend services.
 
         """
 
